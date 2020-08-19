@@ -1,1 +1,184 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$rndplatform-primary: mat-palette($mat-indigo);
+$rndplatform-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$rndplatform-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$rndplatform-theme: mat-light-theme((
+  color: (
+    primary: $rndplatform-primary,
+    accent: $rndplatform-accent,
+    warn: $rndplatform-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($rndplatform-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;
+  font-size: 10px;
+  font-family: "Helvetica" !important;
+  height:100%;
+}
+body { margin: 0; height:100%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h4
+{
+  font-family:"SaudiaRegular", Arial, Helvetica, sans-serif;
+  font-size:3.6rem !important;
+  font-weight: bold !important;
+  color:#1D1760;
+  padding:20px 0 20px 0;
+}
+::placeholder {
+  color: #808080;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #808080;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #808080;
+}
+
+.msgError
+{
+color: #C80202;
+background:#FFE5E5;
+font-size:1.8rem;
+border-radius: 5px;
+padding:10px 10px 10px 14px;
+margin-bottom:20px;
+}
+.msgWarning
+{
+  color: #7B5500;
+  background:#FFF7D8;
+  font-size:1.8rem;
+  border-radius: 5px;
+  padding:10px 10px 10px 14px;
+  margin-bottom:20px;
+}
+.msgSuccess
+{
+  color: #4CAF50;
+  background:#D8FBDA;
+  font-size:1.8rem;
+  border-radius: 5px;
+  padding:10px 10px 10px 14px;
+  margin-bottom:20px;
+}
+
+fieldset
+{
+border:solid 1px #919191;
+border-radius:5px;
+margin-top:8px;
+margin-bottom:8px;
+}
+legend {
+font-size: 2rem;
+color:#1D1760;
+font-family: "Helvetica" !important;
+}
+input, select
+{
+font-size: 2rem;
+color:#1D1760;
+border:none !important;
+width:100%;
+font-family: "Helvetica" !important;
+}
+input:focus, select:focus, select:active, select:hover, option, option:focus
+{
+border:none !important;
+outline:none !important;
+background:#fff;
+color:#1D1760;
+width:100%;
+}
+input[type="text"],input[type="password"]
+{
+padding:4px 0 4px 4px;
+}
+button
+{
+color:#fff;
+background:#9B358F;
+font-size:2.2rem;
+font-weight:bold;
+min-height: 45px;
+border:none !important;
+margin-top:8px;
+border-radius:5px;
+}
+button:focus
+{
+border:none !important;
+outline:none !important
+}
+.btnLavender
+{
+  background:#9B358F;
+}
+
+table
+{
+border:0;
+width:100%;
+padding:3% 3% 0 3%;
+}
+th {
+font-size: 1.6em;
+font-weight: bold;
+padding:8px 0;
+text-align:left;
+}
+tr:nth-child(even) {
+background:#f2f3f4;
+padding:5px 0;
+}
+td {
+padding:8px 0;
+font-size: 1.4em;
+}
+p {
+width:94%;
+padding:3%;
+font-size: 1.6em;
+font-weight: bold;
+}
+
+.flex
+{
+display:flex;
+}
+.full
+{
+width:100%;
+}
+.half
+{
+width:50%;
+}

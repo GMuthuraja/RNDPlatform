@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rndplatform"
+    }
+  },
+  "defaultProject": "rndplatform",
+  "cli": {
+    "analytics": "e3411337-c56a-402a-8a53-f852b27760fd"
+  }
 }

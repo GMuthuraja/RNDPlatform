@@ -1,0 +1,54 @@
+html {
+  // font-size:10px;
+  font-family: "Helvetica" !important;
+  background: url("/src/assets/images/loginbg.svg") repeat-x;
+}
+
+.toolbar img
+{
+  padding: 2rem 2rem 0 2rem;
+  height:50px;
+}
+.content {
+  font-size: 62.5%;
+  align-items: center;
+  padding: 2rem 2rem 0 2rem;
+}
+.tac
+{
+  text-align: center;
+}
+.formsHolder
+{
+  display:flex;
+}
+.form1, .form2
+{
+  padding:0 10%;
+  width:44%;
+}
+.beaker
+{
+  width:30%;
+}
+a
+{
+  color:#000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+p
+{
+  padding-bottom:0;
+  margin-bottom:0;
+}
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+  .formsHolder
+  {
+    display:bolck;
+    width:100%;
+  }
+}
