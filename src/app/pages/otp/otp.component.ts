@@ -74,7 +74,7 @@ export class OtpComponent implements OnInit {
    * Initiates OTP timer
    * */
   initiateOTPTimer() {
-    let startTimeInSeconds = 10;
+    let startTimeInSeconds = 120;
     this.OTPinterval = setInterval(() => {
       startTimeInSeconds--;
       if (startTimeInSeconds == 0) {
@@ -109,14 +109,14 @@ export class OtpComponent implements OnInit {
       device_id = device_id.replace(/-/g, "");
     }
 
-    this.subscription = this.api.verifyOTP(this.userId, device_id, otp).subscribe(re => {
+    this.subscription = this.api.verifyOTP(this.userId, device_id, otp).subscribe(res => {
 
-      var res = {
-        "isRegistered": true,
-        "tryOTP": null,
-        "devices": null,
-        "mob": "33-795"
-      }
+      // var res = {
+      //   "isRegistered": true,
+      //   "tryOTP": null,
+      //   "devices": null,
+      //   "mob": "33-795"
+      // }
 
       if (res) {
         if ((res['isRegistered']) && (!this.checkLimit(res['devices']))) {

@@ -51,10 +51,10 @@ export class LoginComponent implements OnInit {
   initLoginForm() {
     this.loginForm = this.formBuilder.group({
       corpID: [
-        "NDALCU2",
+        "",
         Validators.compose([Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(CUSTID_REGEX)])
       ],
-      password: ["2YuNRXWV", Validators.required]
+      password: ["", Validators.required]
     });
   }
 
