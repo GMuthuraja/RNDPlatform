@@ -1,25 +1,29 @@
 <div class="toolbar" role="banner">
   <img src="../assets/images/saudialogo.svg">
 </div>
-<div class="content" role="main" style="background-image: url(../assets/images/loginbg.svg);background-repeat:no-repeat;background-position: 122% center;background-size: 50% 100%;">
+<div class="content" role="main"
+  style="background-image: url(../assets/images/loginbg.svg);background-repeat:no-repeat;background-position: 122% center;background-size: 50% 100%;">
   <div class="formsHolder">
     <div class="form1">
-    <div class="tac"><img src="../assets/images/beaker.svg" class="beaker"></div>
-    <h4 class="tac">RnD Platform</h4>
-    <div class="card msgError">please enter correct corp ID </div>
-    <fieldset>
-      <legend>Corp Id</legend>
-      <input type="text" value="" placeholder="Corp ID">
-    </fieldset>
-    <fieldset>
-      <legend>Password</legend>
-      <input type="passord" value="" placeholder="************">
-    </fieldset>
-    <div class="flex">
-      <button type="button" class="full btnLavender">Sign In</button>
-    </div>
-    </div>
+      <div class="tac"><img src="../assets/images/beaker.svg" class="beaker"></div>
+      <h4 class="tac">RnD Platform</h4>
+      <div class="card msgError" *ngIf="!isLoginFormValid">please enter correct corp ID </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="manualLogin(loginForm.value)">
+        <fieldset>
+          <legend>Corp Id</legend>
+          <input type="text" maxlength="8" class="upper" formControlName="corpID" placeholder="Corp ID"
+            (input)="utilityService.restrictSpecialChars($event)" required>
+        </fieldset>
+        <fieldset>
+          <legend>Password</legend>
+          <input type="password" formControlName="password" placeholder="************">
+        </fieldset>
+        <div class="flex">
+          <button type="submit" class="full btnLavender" [disabled]="loginForm.invalid">Sign In</button>
+        </div>
+      </form>
 
     </div>
+  </div>
 </div>
-

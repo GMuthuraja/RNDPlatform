@@ -1,23 +1,26 @@
 <div class="toolbar" role="banner">
   <img src="../assets/images/saudialogo.svg">
 </div>
-<div class="content" role="main" style="background-image: url(../assets/images/loginbg.svg);background-repeat:no-repeat;background-position: 122% center;background-size: 50% 100%;">
+<div class="content" role="main"
+  style="background-image: url(../assets/images/loginbg.svg);background-repeat:no-repeat;background-position: 122% center;background-size: 50% 100%;">
   <div class="formsHolder">
     <div class="form1">
-    <div class="tac"><img src="../assets/images/beaker.svg" class="beaker"></div>
-    <h4 class="tac">RnD Platform</h4>
-    <div class="card msgError">You have entered incorrect OTP  please try again </div>
-    <fieldset>
-      <legend>OTP Code</legend>
-      <input type="text" value="" placeholder="Code">
-    </fieldset>
-    <div class="flex">
-      <button type="button" class="full btnLavender">Continue</button>
+      <div class="tac"><img src="../assets/images/beaker.svg" class="beaker"></div>
+      <h4 class="tac">RnD Platform</h4>
+      <div class="card msgError" *ngIf="otpInValid">You have entered incorrect OTP please try again </div>
+      <div class="card msgError" *ngIf="limitExceed">You have entered incorrect OTP please try again </div>
+      <form [formGroup]="OTPForm" (ngSubmit)="submitOTP(OTPForm.value)">
+        <fieldset>
+          <legend>OTP Code</legend>
+          <input type="tel" formControlName="otp" maxlength="4" minlength="4"
+            (input)="utilityService.restrictChars($event)" placeholder="Code">
+        </fieldset>
+        <div class="flex">
+          <button type="submit" [disabled]="OTPForm.invalid" class="full btnLavender">Continue</button>
+        </div>
+      </form>
+      <p class="tac">{{otpTimer}}</p>
+      <p class="tac" *ngIf="canOTPResend">Didn’t Receive OTP yet ? Tap <a (click)="resendOTP()">Resend</a></p>
     </div>
-    <p class="tac">00:59</p>
-    <p class="tac">Didn’t Receive OTP yet ? Tap <a href="#">Resend</a></p>
-    </div>
-    </div>
+  </div>
 </div>
-
-

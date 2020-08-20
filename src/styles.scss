@@ -1,3 +1,38 @@
+ @import 'theme/variables.scss';
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$rndplatform-primary: mat-palette($mat-indigo);
+$rndplatform-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$rndplatform-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$rndplatform-theme: mat-light-theme((
+  color: (
+    primary: $rndplatform-primary,
+    accent: $rndplatform-accent,
+    warn: $rndplatform-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($rndplatform-theme);
+
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -41,12 +76,20 @@ html, body { height: 100%;
   height:100%;
 }
 body { margin: 0; height:100%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1
+{
+  font-size:36px;
+  font-weight: bold;
+  padding-top:40px;
+  padding-bottom:20px;
+  color:$colorPrimary;
+}
 h4
 {
   font-family:"SaudiaRegular", Arial, Helvetica, sans-serif;
   font-size:3.6rem !important;
   font-weight: bold !important;
-  color:#1D1760;
+  color:$colorPrimary;
   padding:20px 0 20px 0;
 }
 ::placeholder {
@@ -99,13 +142,13 @@ margin-bottom:8px;
 }
 legend {
 font-size: 2rem;
-color:#1D1760;
+color:$colorPrimary;
 font-family: "Helvetica" !important;
 }
 input, select
 {
 font-size: 2rem;
-color:#1D1760;
+color:$colorPrimary;
 border:none !important;
 width:100%;
 font-family: "Helvetica" !important;
@@ -115,7 +158,7 @@ input:focus, select:focus, select:active, select:hover, option, option:focus
 border:none !important;
 outline:none !important;
 background:#fff;
-color:#1D1760;
+color:$colorPrimary;
 width:100%;
 }
 input[type="text"],input[type="password"]
@@ -125,7 +168,6 @@ padding:4px 0 4px 4px;
 button
 {
 color:#fff;
-background:#9B358F;
 font-size:2.2rem;
 font-weight:bold;
 min-height: 45px;
@@ -140,45 +182,67 @@ outline:none !important
 }
 .btnLavender
 {
-  background:#9B358F;
+  background:$btnLavender;
+}
+.btnLavender
+{
+  background:$btnLavender;
 }
 
-table
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-tab-label
 {
-border:0;
-width:100%;
-padding:3% 3% 0 3%;
+  height:100px !important;
+  padding-right:30px;
+  font-size:16px;
+  font-weight:bold;
 }
-th {
-font-size: 1.6em;
-font-weight: bold;
-padding:8px 0;
-text-align:left;
+.mat-tab-label:first-child
+{
+  color:$colorPrimary;
+  background:url(../src/assets/images/beaker.svg) no-repeat left center ;
+  background-size:70px auto;
+  padding-left:70px;
+  opacity:1;
 }
-tr:nth-child(even) {
-background:#f2f3f4;
-padding:5px 0;
-}
-td {
-padding:8px 0;
-font-size: 1.4em;
-}
-p {
-width:94%;
-padding:3%;
-font-size: 1.6em;
-font-weight: bold;
+.mat-tab-label:nth-last-child(4)
+{
+  color:#A14995;
+  background:url(../src/assets/images/beaker_small.svg) no-repeat left center ;
+  background-size:40px auto;
+  padding-left:60px;
+  opacity:1;
 }
 
-.flex
+.mat-tab-label:nth-last-child(3)
 {
-display:flex;
+  color:#4F758F;
+  background:url(../src/assets/images/betauser.svg) no-repeat left center ;
+  background-size:60px auto;
+  padding-left:70px;
+  opacity:1;
 }
-.full
+.mat-tab-label:nth-last-child(2)
 {
-width:100%;
+  color:#D96D00;
+  background:url(../src/assets/images/idea.svg) no-repeat left center ;
+  background-size:60px auto;
+  padding-left:70px;
+  opacity:1;
 }
-.half
+
+.mat-tab-label:last-child
 {
-width:50%;
+  color:#1D1860;
+  background:url(../src/assets/images/estaff.svg) no-repeat left center ;
+  background-size:50px auto;
+  padding-left:60px;
+  opacity:1;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar
+{
+  height:5px;
+  background-color:#1D1860 !important;
 }
