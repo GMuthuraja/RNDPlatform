@@ -27,6 +27,7 @@ export class OtpComponent implements OnInit {
   password: any;
   subscription: any;
   otpTimer: any;
+  isLoaderVisible: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -109,6 +110,8 @@ export class OtpComponent implements OnInit {
       device_id = device_id.replace(/-/g, "");
     }
 
+    this.isLoaderVisible = true;
+
     this.subscription = this.api.verifyOTP(this.userId, device_id, otp).subscribe(res => {
 
       // var res = {
@@ -117,6 +120,8 @@ export class OtpComponent implements OnInit {
       //   "devices": null,
       //   "mob": "33-795"
       // }
+
+      this.isLoaderVisible = false;
 
       if (res) {
         if ((res['isRegistered']) && (!this.checkLimit(res['devices']))) {
@@ -135,10 +140,11 @@ export class OtpComponent implements OnInit {
           this.limitExceed = true;
         }
       } else {
-        alert("went wrong");
+        alert("Something went wrong!");
       }
     }, (error => {
-      alert("went wrong");
+      alert("Something went wrong!");
+      this.isLoaderVisible = false;
     }));
   }
 
@@ -152,16 +158,20 @@ export class OtpComponent implements OnInit {
       device_id = device_id.replace(/-/g, "");
     }
 
+    this.isLoaderVisible = true;
     this.subscription = this.api.sendOTP(this.userId, device_id).subscribe(res => {
       if (res) {
         this.otpInValid = false;
         this.limitExceed = false;
         this.formValueReset();
+        this.isLoaderVisible = false;
       } else {
-        alert("went wrong");
+        alert("Something went wrong!");
+        this.isLoaderVisible = false;
       }
     }, (error => {
-      alert("went wrong");
+      alert("Something went wrong!");
+      this.isLoaderVisible = false;
     }));
   }
 

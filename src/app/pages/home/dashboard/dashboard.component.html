@@ -1,60 +1,58 @@
 <div fxLayout="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-  <mat-tab-group fxLayout="column" >
+  <mat-tab-group fxLayout="column">
     <mat-tab label="RnD Dashboard" class="mnuDashboard">
       <div class="content">
         <h1>RnD Dashboard</h1>
-        <div fxLayout="row" fxLayoutGap="0.5%" >
+        <div fxLayout="row" fxLayoutGap="0.5%">
           <mat-card>
             <div>
-        <img src="assets/images/beaker_small.svg">
-      </div>
-        <h2>22</h2>
-        <p>Experiments</p>
+              <img src="assets/images/beaker_small.svg">
+            </div>
+            <h2>22</h2>
+            <p>Experiments</p>
           </mat-card>
           <mat-card>
-          <div>
-            <img src="assets/images/betauser.svg">
-          </div>
+            <div>
+              <img src="assets/images/betauser.svg">
+            </div>
             <h2>439</h2>
             <p>Beta Users</p>
-              </mat-card>
-              <mat-card>
-              <div>
-                <img src="assets/images/idea.svg">
-              </div>
-                <h2>33</h2>
-                <p>Ideas</p>
-                  </mat-card>
-                  <mat-card>
-                  <div>
-                    <img src="assets/images/logo75.svg">
-                  </div>
-                    <h2>11.7 K</h2>
-                    <p>eStaff</p>
-                      </mat-card>
+          </mat-card>
+          <mat-card>
+            <div>
+              <img src="assets/images/idea.svg">
+            </div>
+            <h2>33</h2>
+            <p>Ideas</p>
+          </mat-card>
+          <mat-card>
+            <div>
+              <img src="assets/images/logo75.svg">
+            </div>
+            <h2>11.7 K</h2>
+            <p>eStaff</p>
+          </mat-card>
         </div>
-        </div>
-      </mat-tab>
+      </div>
+    </mat-tab>
     <mat-tab label="Experiments">
       <div class="content">
-      <h1>Expperiments</h1>
+        <h1>Expperiments</h1>
       </div>
     </mat-tab>
     <mat-tab label="Beta Users">
-      <div class="content">
-      <h1>Beta Users</h1>
-      </div>
+      <app-betausers></app-betausers>
     </mat-tab>
     <mat-tab label="Ideas">
       <div class="content">
-      <h1>Ideas</h1>
+        <h1>Ideas</h1>
       </div>
     </mat-tab>
     <mat-tab label="eStaff">
       <div class="content">
-      <h1>eStaff</h1>
+        <app-ratings></app-ratings>
       </div>
     </mat-tab>
   </mat-tab-group>
 </div>
-
+<router-outlet></router-outlet>

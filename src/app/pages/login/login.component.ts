@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
   userId: any;
   subscription: any;
   userInfo: any;
-  isLoginFormValid = true;
+  isLoginFormValid: boolean = true;
+  isLoaderVisible: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -87,6 +88,8 @@ export class LoginComponent implements OnInit {
   login(userId, password) {
     console.log(password);
 
+    this.isLoaderVisible = true;
+
     //Hiding validation error label
     this.isLoginFormValid = true;
 
@@ -103,12 +106,15 @@ export class LoginComponent implements OnInit {
           if (res["UserInfo"]) {
 
             //Hard coded
+            //this.isLoaderVisible = false;
             //this.storeSessionData(res["UserInfo"], userId, password);
             //this.router.navigate(['/dashboard']);
 
             this.sendOTP(res["UserInfo"], userId, password);
           }
         } else {
+
+          this.isLoaderVisible = false;
           //showing validation error label
           this.isLoginFormValid = false;
         }
@@ -116,7 +122,8 @@ export class LoginComponent implements OnInit {
         console.log("Validation : ", res);
       }
     }, (error => {
-      alert("went wrong");
+      alert("Something went wrong!");
+      this.isLoaderVisible = false;
     }));
   }
 
@@ -142,6 +149,8 @@ export class LoginComponent implements OnInit {
       if (response) {
         if (response['isRegistered']) {
 
+          this.isLoaderVisible = false;
+
           //assign login response into local and global storage
           this.storeSessionData(res, userId, password);
 
@@ -160,12 +169,15 @@ export class LoginComponent implements OnInit {
 
           console.log(navigationExtras);
 
+          this.isLoaderVisible = false;
+
           //Navigate to OTP page with param values
           this.router.navigate(['/otp'], navigationExtras);
         }
       }
     }, (error => {
-      alert("went wrong");
+      alert("Something went wrong!");
+      this.isLoaderVisible = false;
     }));
   }
 

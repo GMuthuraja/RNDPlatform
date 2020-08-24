@@ -9,13 +9,22 @@ import { RatingsComponent } from './ratings/ratings.component';
 import { NewExperimentsComponent } from './new-experiments/new-experiments.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { SummaryComponent } from './summary/summary.component';
+import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 
 
 @NgModule({
-  declarations: [ViewExperimentsComponent, FeedbackComponent, UsersComponent, RatingsComponent, NewExperimentsComponent, AddUsersComponent, SummaryComponent],
+  declarations: [
+    ViewExperimentsComponent,
+    FeedbackComponent,
+    UsersComponent,
+    RatingsComponent,
+    NewExperimentsComponent,
+    AddUsersComponent,
+    SummaryComponent],
   imports: [
     CommonModule,
-    ExperimentsRoutingModule
+    ExperimentsRoutingModule,
+    MaterialModule
   ]
 })
 export class ExperimentsModule { }

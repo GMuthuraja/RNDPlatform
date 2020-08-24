@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { OtpComponent } from './pages/otp/otp.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
-  { path: 'otp', loadChildren: () => import('./pages/otp/otp.module').then(m => m.OtpModule) },
+  { path: 'login', component: LoginComponent },
+  { path: 'otp', component: OtpComponent },
   { path: 'dashboard', loadChildren: () => import('./pages/home/dashboard/dashboard.module').then(m => m.DashboardModule) }
 ];
 

@@ -1,0 +1,15 @@
+.loading-wrapper {
+    width: 100%;
+    height: 100vh;
+    background: #0000008a;
+    position: fixed;
+    z-index: 999999;
+  }
+
+  .loading-wrapper div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  } 

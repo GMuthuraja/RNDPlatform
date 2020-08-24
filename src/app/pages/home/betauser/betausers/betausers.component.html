@@ -1,68 +1,78 @@
-<div class="example-container mat-elevation-z8">
+<mat-grid-list cols="1" class="betauser_grid">
+    <div class="betauser_head_div">
+        <img src="../../assets/images/group.svg" />
+        <h1>Beta Users (439)</h1>
+        <div><button mat-flat-button>New Notification</button></div>
+    </div>
 
-    <mat-table [dataSource]="dataSource" matSort>
-        <mat-header-row *matHeaderRowDef="displayedColumns">
-        </mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;">
-        </mat-row>
-        <!-- ID Column -->
-        <ng-container matColumnDef="Staff Name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Staff Name
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.StaffName}} </mat-cell>
-        </ng-container>
+    <div class="beatuser-container mat-elevation-z2">
 
-        <!-- Progress Column -->
-        <ng-container matColumnDef="Payroll">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Payroll
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Payroll}} </mat-cell>
-        </ng-container>
+        <mat-table [dataSource]="dataSource" matSort>
+            <mat-header-row *matHeaderRowDef="displayedColumns">
+            </mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+            <!-- ID Column -->
+            <ng-container matColumnDef="Staff Name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Staff Name
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.StaffName}} </mat-cell>
+            </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="Position">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Position
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Position}} </mat-cell>
-        </ng-container>
+            <!-- Progress Column -->
+            <ng-container matColumnDef="Payroll">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Payroll
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Payroll}} </mat-cell>
+            </ng-container>
 
-        <!-- Color Column -->
-        <ng-container matColumnDef="Email">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Email
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Email}} </mat-cell>
-        </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="Position">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Position
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Position}} </mat-cell>
+            </ng-container>
 
-        <!-- Mobile Column -->
-        <ng-container matColumnDef="Mobile">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Mobile}} </mat-cell>
-        </ng-container>
+            <!-- Color Column -->
+            <ng-container matColumnDef="Email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Email
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Email}} </mat-cell>
+            </ng-container>
 
-        <!-- Area of interest Column -->
-        <ng-container matColumnDef="Area of interest">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Area of interest
-                <mat-select>
-                    <mat-option (onSelectionChange)="applyFilter('Clear')">All Intrests</mat-option>
-                    <mat-option *ngFor="let dept of Areaofinterest1" (onSelectionChange)="applyFilter(dept)">{{dept}}</mat-option>
-                </mat-select>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Areaofinterest}} </mat-cell>
-        </ng-container>
+            <!-- Mobile Column -->
+            <ng-container matColumnDef="Mobile">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Mobile}} </mat-cell>
+            </ng-container>
 
-        <!-- Way of contact Column -->
-        <ng-container matColumnDef="Way of contact">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Way of Contact
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Wayofcontact}} </mat-cell>
-        </ng-container>
+            <!-- Area of interest Column -->
+            <ng-container matColumnDef="Area of interest">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Area of interest
+                    <mat-select>
+                        <mat-option (onSelectionChange)="applyFilter('Clear')">All Intrests</mat-option>
+                        <mat-option *ngFor="let dept of Areaofinterest1" (onSelectionChange)="applyFilter(dept)">{{dept}}</mat-option>
+                    </mat-select>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Areaofinterest}} </mat-cell>
+            </ng-container>
+
+            <!-- Way of contact Column -->
+            <ng-container matColumnDef="Way of contact">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Way of Contact
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Wayofcontact}} </mat-cell>
+            </ng-container>
 
 
-    </mat-table>
+        </mat-table>
 
-    <!-- <mat-paginator [pageSizeOptions]="[10]" style="visibility:hidden" #page [length]="100" [pageSize]="10"></mat-paginator> -->
-    <mat-paginator appStylePaginatorDirective [showFirstLastButtons]='false' [showTotalPages]="5" [length]="100" [pageSize]="10">
-    </mat-paginator>
-</div>
+        <!-- <mat-paginator [pageSizeOptions]="[10]" style="visibility:hidden" #page [length]="100" [pageSize]="10"></mat-paginator> -->
+
+    </div>
+
+</mat-grid-list>
+<mat-paginator appStylePaginatorDirective [showFirstLastButtons]='false' [showTotalPages]="5" [length]="100" [pageSize]="10">
+</mat-paginator>
 <router-outlet></router-outlet>

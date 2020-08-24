@@ -1,0 +1,88 @@
+.feedback_grid {
+    // padding: 48px;
+    .feedback_head_div {
+        float: left;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        img {
+            float: left;
+            margin-right:20px
+        }
+        h1 {
+            float: left;
+            color: #707070 !important;
+            font-weight: bold;
+            margin: 0 !important;
+        }
+    }
+    .feedback_table_div {
+        float: left;
+        width: 100%;
+        margin-top: 20px;
+        table {
+            padding: 0;
+            th {
+                font-weight: bold;
+                color: black;
+                padding: 0 10px;
+            }
+            td {
+                padding: 0 10px;
+            }
+            th:last-child {
+                color: #007FFD !important;
+            }
+            td.feedback_rate {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+        p {
+            color: #007FFD !important;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+}
+.feedback_expand_div {
+    overflow: hidden;
+    display: flex;
+}
+.feedback_expand_personal_div {
+    width: 15%;
+    div {
+        margin: 5px 0;
+        span {
+            color: #6A6A6A;
+        }
+    }
+}
+.feedback_expand_description_div {
+    width: 55%;
+    text-align: left;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+.feedback_expand_trello_div {
+    width: 30%;
+    text-align: right;
+    line-height: 110px;
+    font-size: 12px;
+    padding: 8px;
+    font-weight: bold;
+    margin-right: 0px;
+    color: #D96D00;
+}
+tr.feedback-detail-row {
+    height: 0 !important;
+}
+  
+tr.feedback-element-row:not(.feedback-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.feedback-element-row:not(.feedback-expanded-row):active {
+    background: #efefef;
+}

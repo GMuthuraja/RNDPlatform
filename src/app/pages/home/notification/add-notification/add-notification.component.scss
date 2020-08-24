@@ -1,0 +1,37 @@
+@import '../../../../../theme/variables.scss';
+
+.content
+{
+  display: flex;
+  height:100%;
+  align-items: center;
+}
+.titleHolder {
+  margin-bottom:20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  img {
+      height:50px;
+      float: left;
+      margin-right:20px
+  }
+  h4 {
+      float: left;
+      color: #707070;
+      font-weight: bold;
+      margin-bottom: 0 !important;
+      background-image:url("/src/assets/images/beaker_small.svg");
+  }
+}
+.formsHolder
+{
+  width:40%;
+  margin-left:auto;
+  margin-right:auto;
+}
+option:first-child
+{
+  color:#707070 !important;
+}
+

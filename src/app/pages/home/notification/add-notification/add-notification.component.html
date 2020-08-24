@@ -1,1 +1,31 @@
-<p>add-notification works!</p>
+<div class="content" role="main">
+  <div class="formsHolder">
+      <div class="titleHolder">
+        <img src="../assets/images/beaker_small.svg" class="beaker">
+        <h4>New Notification</h4>
+      </div>
+      <!-- <form [formGroup]="loginForm" (ngSubmit)="manualLogin(loginForm.value)"> -->
+        <fieldset>
+          <legend>Topic</legend>
+          <select placeholder="Beta Users">
+            <option>Beta Users</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Title</legend>
+          <input type="text"  placeholder="Subject">
+        </fieldset>
+        <fieldset>
+          <legend>Description</legend>
+          <textarea type="text" rows="3" placeholder="Updates Content"></textarea>
+        </fieldset>
+        <div class="flex">
+          <button type="submit" class="full btnLavender" >Send Now</button>
+        </div>
+      <!-- </form> -->
+
+  </div>
+</div>

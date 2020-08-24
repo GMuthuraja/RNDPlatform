@@ -1,18 +1,54 @@
-.example-container {
+.betauser_grid {
+    // padding: 48px;
+    .betauser_head_div {
+        float: left;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 25px;
+        img {
+            float: left;
+            margin-right: 20px
+        }
+        h1 {
+            float: left;
+            color: #4F758F !important;
+            padding-top: 10px;
+            font-weight: bold;
+            margin: 0 !important;
+        }
+        div button {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            color: #FFFFFF;
+            background-color: #4F758F;
+            border-radius: 5px;
+            margin-right: 25px;
+            width: 250px;
+            height: 32px;
+        }
+    }
+}
+
+.mat-table {
+    font-family: Helvetica;
+}
+
+.beatuser-container {
     display: flex;
     flex-direction: column;
     min-width: 300px;
-}
-
-.example-header {
-    min-height: 64px;
-    padding: 8px 24px 0;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .mat-header-cell {
-    font-size: 15px;
     font-weight: bold;
-    color: #000000
+    color: black;
+    // border-bottom-width: 1px;
+    // border-bottom-style: solid;
+    // border-bottom-color: rgba(0, 0, 0, 0.12)
 }
 
 .mat-select {
@@ -85,13 +121,28 @@
     justify-content: center !important;
 }
 
-.mat-icon-button {
-    // display: none !important;
-    // url('../../../../../assets/images/arrow.svg') !important
-    value: 'text'
+.mat-paginator-icon {
+    display: none !important;
+    //     content: 'Your text'
 }
 
-// .mat-paginator-icon {
-//     display: none !important;
-//     content: 'Your text'
-// }
+.mat-paginator-navigation-next:after {
+    content: 'Next' !important;
+    //display: none !important;
+    // content: 'test'!important;
+}
+
+.mat-paginator-navigation-previous:after {
+    content: 'Pervious' !important;
+}
+
+mat-cell {
+    margin-top: 10px;
+    // border-bottom-color: rgba(0, 0, 0, 0.12);
+    // border-bottom-width: 1px;
+    // border-bottom-style: solid;
+}
+
+.mat-paginator-container {
+    margin-top: 10px !important;
+}

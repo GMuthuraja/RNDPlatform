@@ -1,0 +1,131 @@
+@import '../../../../../theme/variables.scss';
+.content{padding:3em;}
+
+.titleHolder {
+  margin-bottom:20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  img {
+      height:50px;
+      float: left;
+      margin-right:20px
+  }
+  h4 {
+      float: left;
+      font-size: 34px;
+      color: #707070;
+      font-weight: bold;
+      margin-bottom: 0 !important;
+      background-image:url("/src/assets/images/beaker_small.svg");
+  }
+}
+.beaker
+{
+  img {
+    height:50px;
+  }
+}
+.formsHolder
+{
+  height:auto;
+}
+p {
+  color: $coral;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 10px;
+}
+table
+{
+  width:100%;
+  border:solid 1px #dedede;
+}
+th {
+  font-weight: bold;
+  color:$grey;
+  font-size:16px;
+}
+td
+{
+  color:$grey;
+  font-size:16px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.btnLavender
+{
+  padding-left:40px;
+  padding-right:40px;
+  margin-left:auto;
+}
+.beakersmall
+{
+  img {
+    height:35px;
+  }
+}
+.views
+{
+  font-weight: bold;
+}
+.experiments a
+{
+  color:$grey;
+}
+.testers a
+{
+color:$teal;
+font-weight: bold;
+}
+.rating a
+{
+color:$colorPrimary;
+font-weight: bold;
+}
+.feedback a
+{
+color:$lavender;
+font-weight: bold;
+}
+.status
+{
+text-align: center;
+}
+.published
+{
+  width:100%;
+  justify-content: center;
+  img
+  {
+    width:32px;
+  }
+  label, span
+  {
+    color: $successGreen;
+  }
+}
+.suspended {
+  justify-content: center;
+  img
+  {
+    width:32px;
+  }
+  label, span
+  {
+    color: $error;
+  }
+}
+.notify
+{
+  color:$notify;
+  font-size: 18px;
+  font-weight: bold;
+}
+.notifyDull
+{
+  color:$notify;
+  font-size: 18px;
+  font-weight: bold;
+  opacity:0.25;
+}

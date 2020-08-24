@@ -1,0 +1,15 @@
+<svg id="switch_off_light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.25" height="26.5" viewBox="0 0 40.25 26.5">
+  <defs>
+    <filter id="switch_button" x="0" y="0" width="26.5" height="26.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.239"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="switch_path" d="M30,17H10A7,7,0,0,1,10,3H30a7,7,0,0,1,0,14Z" transform="translate(3.25 1.25)" fill="rgba(34,31,31,0.26)" fill-rule="evenodd"/>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#switch_button)">
+    <path id="switch_button-2" data-name="switch_button" d="M10,0A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z" transform="translate(3.25 1.25)" fill="#f1f1f1" stroke="rgba(0,0,0,0)" stroke-width="0.5"/>
+  </g>
+</svg>

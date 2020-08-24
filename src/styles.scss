@@ -1,4 +1,4 @@
- @import 'theme/variables.scss';
+@import 'theme/variables.scss';
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -145,7 +145,7 @@ font-size: 2rem;
 color:$colorPrimary;
 font-family: "Helvetica" !important;
 }
-input, select
+input, select, textarea
 {
 font-size: 2rem;
 color:$colorPrimary;
@@ -168,7 +168,7 @@ padding:4px 0 4px 4px;
 button
 {
 color:#fff;
-font-size:2.2rem;
+font-size:2rem;
 font-weight:bold;
 min-height: 45px;
 border:none !important;
@@ -184,22 +184,34 @@ outline:none !important
 {
   background:$btnLavender;
 }
-.btnLavender
+.flex
 {
-  background:$btnLavender;
+  display: flex;
 }
-
+.full
+{
+width:100%;
+}
+.half
+{
+width:50%;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-tab-label
 {
   height:100px !important;
   padding-right:30px;
-  font-size:16px;
+  font-size:14px;
   font-weight:bold;
+}
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  font-size:18px !important;
 }
 .mat-tab-label:first-child
 {
+  width:16%;
   color:$colorPrimary;
   background:url(../src/assets/images/beaker.svg) no-repeat left center ;
   background-size:70px auto;
@@ -208,15 +220,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .mat-tab-label:nth-last-child(4)
 {
+  width:13%;
   color:#A14995;
   background:url(../src/assets/images/beaker_small.svg) no-repeat left center ;
   background-size:40px auto;
   padding-left:60px;
   opacity:1;
 }
-
 .mat-tab-label:nth-last-child(3)
 {
+  width:14%;
   color:#4F758F;
   background:url(../src/assets/images/betauser.svg) no-repeat left center ;
   background-size:60px auto;
@@ -225,24 +238,63 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .mat-tab-label:nth-last-child(2)
 {
+  width:9%;
   color:#D96D00;
   background:url(../src/assets/images/idea.svg) no-repeat left center ;
   background-size:60px auto;
   padding-left:70px;
   opacity:1;
 }
-
 .mat-tab-label:last-child
 {
+  width:9%;
   color:#1D1860;
   background:url(../src/assets/images/estaff.svg) no-repeat left center ;
   background-size:50px auto;
   padding-left:60px;
   opacity:1;
 }
-
 .mat-tab-group.mat-primary .mat-ink-bar
 {
   height:5px;
   background-color:#1D1860 !important;
+}
+mat-tab-header
+{
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2) !important;
+  height:99px;
+}
+.mat-paginator-page-size {
+  display: none !important;
+}
+
+.mat-paginator-range-label {
+  display: none !important;
+}
+
+.mat-paginator-container {
+  justify-content: center !important;
+}
+
+.mat-paginator-icon {
+  display: none !important;
+  //     content: 'Your text'
+}
+
+.mat-paginator-navigation-next:after {
+  content: 'Next' !important;
+  //display: none !important;
+  // content: 'test'!important;
+}
+
+.mat-paginator-navigation-previous:after {
+  content: 'Pervious' !important;
+}
+.mat-paginator-container {
+  margin-top: 10px !important;
+}
+td
+{
+  padding-top:10px !important;
+  padding-bottom:10px !important;
 }

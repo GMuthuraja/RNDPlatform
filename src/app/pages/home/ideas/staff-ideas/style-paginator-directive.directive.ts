@@ -64,26 +64,17 @@ export class StylePaginatorDirectiveDirective {
           
           if (nodeArray[i].nodeName === "BUTTON") {
             if (nodeArray[i].disabled) {
-              this.ren.setStyle(
-                nodeArray[i],
-                "background-color",
-                "red"
-              );
-              this.ren.setStyle(
-                nodeArray[i],"innerText","Text"
-              );
-             this.ren.setStyle(nodeArray[i], "color", "white");
-             this.ren.setStyle(nodeArray[i], "margin", ".5%");
+              this.ren.setStyle(nodeArray[i],"background-color","#fff");
+             this.ren.setStyle(nodeArray[i], "color", "#000000");
+             this.ren.setStyle(nodeArray[i], "margin", ".5% 30px");
              this.ren.setStyle(nodeArray[i], "border-radius","1%")
+             this.ren.setStyle(nodeArray[i], 'width', 'auto');
             } else {
-              this.ren.setStyle(
-                nodeArray[i],
-                "background-color",
-                "red"
-              );
-              this.ren.setStyle(nodeArray[i], "color", "white");
-              this.ren.setStyle(nodeArray[i], "margin", ".5%");  
-              this.ren.setStyle(nodeArray[i], "border-radius","1%")   
+              this.ren.setStyle(nodeArray[i],"background-color","fff");
+              this.ren.setStyle(nodeArray[i], "color", "#000000");
+              this.ren.setStyle(nodeArray[i], "margin", ".5% 30px");  
+              this.ren.setStyle(nodeArray[i], "border-radius","1%")
+              this.ren.setStyle(nodeArray[i], 'width', 'auto');
             }
           }
         }
@@ -116,10 +107,13 @@ export class StylePaginatorDirectiveDirective {
   }
 
   private createButton(i: any, pageIndex: number): any {
-    const linkBtn = this.ren.createElement("mat-button");
+    const linkBtn = this.ren.createElement("mat-label");
     this.ren.addClass(linkBtn, "mat-mini-fab");
     this.ren.setStyle(linkBtn, "margin", "1%");
-    this.ren.setStyle(linkBtn, "border-radius","1%")
+    this.ren.setStyle(linkBtn, "border-radius","5%")
+    this.ren.setStyle(linkBtn, "padding","2px")
+    this.ren.setStyle(linkBtn, "box-shadow",'none')
+    this.ren.setStyle(linkBtn, "border","1px solid #B2A8A8")
 
     const pagingTxt = isNaN(i) ? this._pageGapTxt : +(i + 1);
     const text = this.ren.createText(pagingTxt + "");

@@ -1,3 +1,4 @@
+<app-loader *ngIf="isLoaderVisible"></app-loader>
 <div class="toolbar" role="banner">
   <img src="../assets/images/saudialogo.svg">
 </div>
@@ -8,7 +9,7 @@
       <div class="tac"><img src="../assets/images/beaker.svg" class="beaker"></div>
       <h4 class="tac">RnD Platform</h4>
       <div class="card msgError" *ngIf="otpInValid">You have entered incorrect OTP please try again </div>
-      <div class="card msgError" *ngIf="limitExceed">You have entered incorrect OTP please try again </div>
+      <div class="card msgError" *ngIf="limitExceed">You have exceeded your device limits, kindly access from your registred devices</div>
       <form [formGroup]="OTPForm" (ngSubmit)="submitOTP(OTPForm.value)">
         <fieldset>
           <legend>OTP Code</legend>

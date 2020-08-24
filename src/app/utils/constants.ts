@@ -25,147 +25,79 @@ export const PWD_KEY = 'password';
 //Interceptor
 export const CONTENT_TYPE = 'Content-Type';
 export const CONTENT_TYPE_VALUE = 'application/x-www-form-urlencoded';
-
-
-export interface RatingElement {
+export interface IdeaElement {
     staffName: string;
     payroll: string;
-    rate: number;
-    comment: string;
+    Idea: string,
+    AreaofIdea: string,
     description: string;
     expanded?: boolean;
 }
-
-export interface SuggestionsElement {
-    staffName: string;
-    payroll: string;
-    suggestions: string,
-    description: string;
-    expanded?: boolean;
-}
-
-export const RATINGS_DATA: RatingElement[] = [
+export const Idea_DATA: IdeaElement[] = [
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 4,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Operation',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 4,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Cost',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 5,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Revenue',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 3,
-        comment: 'Test',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Operation',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to ',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 2,
-        comment: 'We need more feature',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Cost',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to ',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 1,
-        comment: 'I dont know',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Revenue',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to ',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 5,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Operation',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to',
         expanded: false
     },
     {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
-        rate: 4,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+        AreaofIdea:'Cost',
+        Idea: "The idea is provide a smarter and faster way of showing attendance recode by having access to......",
+        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to',
         expanded: false
     }
 ];
 
-export const SUGGESTIONS_DATA: SuggestionsElement[] = [
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    },
-    {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-    }
-];
+export const Filter =['Operation','Cost','Revenue','Others']

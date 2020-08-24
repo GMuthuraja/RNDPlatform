@@ -4,7 +4,7 @@ import { AddNotificationComponent } from './add-notification/add-notification.co
 import { ViewNotificationComponent } from './view-notification/view-notification.component';
 
 const routes: Routes = [
-  { path: '', component: ViewNotificationComponent },
+  { path: '', component: AddNotificationComponent },
   { path: 'view-notification', component: ViewNotificationComponent },
   { path: 'add-notification', component: AddNotificationComponent }
 ];

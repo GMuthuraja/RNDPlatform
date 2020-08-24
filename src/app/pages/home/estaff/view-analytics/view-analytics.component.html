@@ -1,1 +1,38 @@
-<p>view-analytics works!</p>
+<div class="content">
+  <h1>eStaff</h1>
+  <div fxLayout="row" fxLayoutGap="0.5%">
+    <mat-card>
+      <div class="imgHolder">
+        <img src="assets/images/betausergrey.svg">
+      </div>
+      <div class="subHolder">
+        <div>
+          <h2>11.7 K</h2>
+          <p>Downloads</p>
+        </div>
+        <div>
+          <h5><img src="assets/images/android.svg">5.4 K</h5>
+          <p>Android</p>
+        </div>
+        <div>
+          <h5><img src="assets/images/apple.svg">6.3 K</h5>
+          <p>iOS</p>
+        </div>
+      </div>
+    </mat-card>
+    <mat-card (click)="goToRatings('/dashboard/estaff/ratings')">
+      <div class="imgHolder">
+        <img src="assets/images/star.svg">
+      </div>
+      <h2>4.2</h2>
+      <p>Ratings</p>
+    </mat-card>
+    <mat-card (click)="goToRatings('/dashboard/estaff/suggestions')">
+      <div class="imgHolder">
+        <img src="assets/images/estaff.svg">
+      </div>
+      <h2>46</h2>
+      <p>Suggestions</p>
+    </mat-card>
+  </div>
+</div>
