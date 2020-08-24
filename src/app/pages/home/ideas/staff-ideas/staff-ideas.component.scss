@@ -57,6 +57,15 @@
     }
 }
 
+.mat-select-value {
+    max-width: 0;
+    display: table-cell;
+    width: 80% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .mat-select-arrow {
     width: 0;
     height: 0;
@@ -64,30 +73,32 @@
     border-right: 6px solid transparent !important;
     border-top: 6px solid !important;
     margin: 0 4px;
-}
-
-.mat-select {
-    //display: inline-block;
-    width: 0% !important;
-    outline: none;
-    margin: 0 4;
-    margin-left: 16px;
-    .mat-select-value {
-        max-width: 0;
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-}
-
-.mat-select-arrow {
     color: #000000 !important;
 }
 
+// .mat-select {
+//     //display: inline-block;
+//     width: 0% !important;
+//     outline: none;
+//     margin: 0 4;
+//     margin-left: 16px;
+//     .mat-select-value {
+//         max-width: 0;
+//         width: 100%;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         white-space: nowrap;
+//     }
+// }
 .idea_expand_div {
     overflow: hidden;
     display: flex;
+}
+
+.mat-select-placeholder {
+    font-weight: bold;
+    color: black;
+    font-family: Helvetica;
 }
 
 .idea_expand_personal_div {
@@ -155,4 +166,8 @@ tr.idea-element-row:not(.suggestion-expanded-row):active {
 
 .mat-paginator-navigation-previous:after {
     content: 'Pervious' !important;
+}
+
+.mat-paginator-container {
+    margin-top: 10px !important;
 }

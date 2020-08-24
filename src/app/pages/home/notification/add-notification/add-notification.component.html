@@ -7,23 +7,21 @@
       <!-- <form [formGroup]="loginForm" (ngSubmit)="manualLogin(loginForm.value)"> -->
         <fieldset>
           <legend>Topic</legend>
-          <select placeholder="Beta Users">
-            <option>Beta Users</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+          <select placeholder="Beta Users" [(ngModel)]="notificationTopic" (change)="getTopicChange(notificationTopic)">
+            <option value="ndalcu2">NDALCU2</option>
+            <!-- <option value="saudiaestafftest">Saudia Staff Test</option> -->
           </select>
         </fieldset>
         <fieldset>
           <legend>Title</legend>
-          <input type="text"  placeholder="Subject">
+          <input type="text"  placeholder="Subject" [(ngModel)]="notificationTitle">
         </fieldset>
         <fieldset>
           <legend>Description</legend>
-          <textarea type="text" rows="3" placeholder="Updates Content"></textarea>
+          <textarea type="text" rows="3" placeholder="Updates Content" [(ngModel)]="notificationDescription"></textarea>
         </fieldset>
         <div class="flex">
-          <button type="submit" class="full btnLavender" >Send Now</button>
+          <button class="full btnLavender" (click)="sendNotification()" [disabled]="(!notificationTopic || notificationTopic && notificationTopic.trim() == '') || (!notificationDescription || notificationDescription && notificationDescription.trim() == '') && (!notificationTitle || notificationTitle && notificationTitle.trim() == '')">Send Now</button>
         </div>
       <!-- </form> -->
 

@@ -1,0 +1,147 @@
+@import '../../../../../theme/variables.scss';
+
+.titleHolder {
+  margin-bottom:20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  img {
+      height:50px;
+      float: left;
+      margin-right:20px
+  }
+  h4 {
+      float: left;
+      font-size: 34px;
+      color: #707070;
+      font-weight: bold;
+      margin-bottom: 0 !important;
+      background-image:url("/src/assets/images/beaker_small.svg");
+  }
+}
+.beaker
+{
+  img {
+    height:50px;
+  }
+}
+h5{
+  font-size: 18px;
+  color:$darkGrey;
+  font-weight: bold;
+  padding-bottom:2rem;
+}
+.formsHolder {
+  padding:2rem 18rem;
+  .titleHolder {
+    padding-left:2%;
+  }
+}
+.formsHolder > div
+{
+  height:auto;
+  display: table;
+  width:100%;
+  height:100%;
+  .form50
+  {
+    width:46%;
+    padding:0 2%;
+    display: table-cell;
+    overflow-y: auto;
+  }
+}
+.form50:first-child>div
+{
+border:solid 1px $cardBorder;
+padding:4rem;
+border-radius: 5px;
+}
+.form50:last-child
+{
+}
+ol
+  {
+      padding-left:16px;
+      li
+      {
+          img
+          {
+            width:80%;
+          }
+          p
+          {
+              line-height:1.5;
+              padding-left:10px;
+          }
+      }
+  }
+  mat-card
+  {
+    margin:0 0 20px 0;
+    padding:0 !important;
+    border-radius:5px;
+    .cardHeader
+    {
+      height: 120px;
+      background:url("../../../../../assets/images/virtualReality.png") no-repeat left top 100%;
+      background-size:cover;
+      border-top-left-radius:5px;
+      border-top-right-radius:5px;
+    }
+     div.cardHeader {
+      overflow:hidden;
+      padding:0;
+      position:relative;
+
+        div.bpHeader
+        {
+          //background-image: linear-gradient(to top,  rgba(100,100,100,1), rgba(100,100,100,.5) 15%, rgba(100,100,100,.25) 20%, rgba(100,100,100,0) 30%);
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 6%, rgba(0, 0, 0, 0.5) 12%, rgba(0, 0, 0, 0) 20%);
+          display: flex;
+          user-select: none;
+          position:absolute;
+          left:0;
+          top:0;
+          width:100%;
+          height:100% !important;
+          overflow:hidden;
+          z-index:100;
+          .imgTitle {
+            width:100%;
+            height:20%;
+            position: absolute;
+            bottom:0;
+            text-align:left;
+            display: flex;
+            align-items: center;
+            padding-left:2rem;
+            span
+              {
+              display:block;
+              font-size:1.4rem;
+              font-weight:bold;
+              color:$white !important;
+              }
+          }
+        }
+      }
+      p
+      {
+        padding:1rem 2rem;
+      }
+  }
+.btnHolder
+{
+  border-top:solid 1px $cardBorder;
+}
+  .btnTrans {
+    color:var(--ion-color-black);
+    border-top:solid 1px $grey;
+    margin:0 !important;
+    font-weight: bold;
+    font-size:12px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: none;
+  }

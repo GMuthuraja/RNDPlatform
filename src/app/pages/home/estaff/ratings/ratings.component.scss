@@ -25,9 +25,18 @@
             td.rate {
                 font-weight: bold;
             }
+            td {
+                padding: 0 20px;
+            }
+    td { 
+        padding-top: 0 !important;
+        padding-bottom:0 !important
+    }
+
             th {
                 font-weight: bold;
                 color: black;
+                padding: 0 20px;
             }
         }
         p {
@@ -92,4 +101,7 @@ tr.rating-element-row:not(.rating-expanded-row):hover {
 
 tr.rating-element-row:not(.rating-expanded-row):active {
    background: #efefef;
+}
+.loadingDiv {
+    
 }

@@ -9,15 +9,20 @@ import {
   transition,
   trigger
 } from "@angular/animations";
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
+import { USER_INFO_KEY } from 'src/app/utils/constants';
+import { RestApiService } from 'src/app/core/http/rest-api.service';
 
 
 export interface RatingElement {
-  staffName: string;
-  payroll: string;
-  rate: number;
-  comment: string;
-  description: string;
-  expanded?: boolean;
+  dtRated: string,
+  rate: number,
+  comment: string,
+  PRN: string,
+  DisplayName: string,
+  mail: string,
+  Tel: string,
+  Dep: string
 }
 
 @Component({
@@ -37,7 +42,8 @@ export interface RatingElement {
 })
 export class RatingsComponent implements OnInit {
   displayedRatingColumns: string[] = ['StaffName', 'Payroll', 'Rate', 'Comment', 'moreDetail'];
-  ratingSource;
+  ratingSource: RatingElement[];
+  userInfo: any;
 
   // Pie
   public pieChartOptions: any = {
@@ -63,7 +69,7 @@ export class RatingsComponent implements OnInit {
     }
   };
   public pieChartLabels: Label[] = ['R-1', 'R-2', 'R-3', 'R-4', 'R-5'];
-  public pieChartData = [7, 4, 6, 30, 53];
+  public pieChartData = [];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
@@ -78,79 +84,61 @@ export class RatingsComponent implements OnInit {
       ]
     }
   ];
-  constructor() {
+  constructor(
+    private api: RestApiService,
+    private storageService: LocalStorageService
+  ) {
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
   }
 
   ngOnInit() {
-    const RATINGS_DATA: RatingElement[] = [
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 4,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 4,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 5,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 3,
-        comment: 'Test',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 2,
-        comment: 'We need more feature',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 1,
-        comment: 'I dont know',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 5,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      },
-      {
-        staffName: "Majed Taha Ali",
-        payroll: '11020229',
-        rate: 4,
-        comment: 'Great Job !',
-        description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
-        expanded: false
-      }
-    ];
-    this.ratingSource = RATINGS_DATA;
+    this.getUserInfo();
+    this.getRatingData();
+  }
 
+  /**
+   * Get User info
+  */
+  getUserInfo() {
+    if(this.storageService.getLocalStorage(USER_INFO_KEY))
+    var userInfo = JSON.parse(this.storageService.getLocalStorage(USER_INFO_KEY));
+    this.userInfo = userInfo ? userInfo[0] : "";
+    console.log("userInfo : ", this.userInfo);
+  }
+
+  /**
+   * Get Rating data
+  */
+  getRatingData() {
+    this.api.getEstaffRating().subscribe(data => {
+      console.log("Rate data : ", data);
+      var output: any = data;
+      if (output && output.length > 0) {
+        this.ratingSource = output;
+        this.ratingSource.map(rateVal => {
+          if (rateVal.comment == null || rateVal.comment == "") {
+            rateVal.comment = "-";
+          }
+        });
+        var r1, r2, r3, r4, r5, totalRates;
+        r1 = this.ratingSource.filter(val => val.rate == 1);
+        r2 = this.ratingSource.filter(val => val.rate == 2);
+        r3 = this.ratingSource.filter(val => val.rate == 3);
+        r4 = this.ratingSource.filter(val => val.rate == 4);
+        r5 = this.ratingSource.filter(val => val.rate == 5);
+        totalRates = r1.length + r2.length + r3.length + r4.length + r5.length;
+        console.log("r1 value : ", Math.floor((r1.length) * 100 / totalRates));
+        this.pieChartData = [
+          Math.floor((r1.length * 100) / totalRates),
+          Math.floor((r2.length * 100) / totalRates),
+          Math.floor((r3.length * 100) / totalRates),
+          Math.floor((r4.length * 100) / totalRates),
+          Math.floor((r5.length * 100) / totalRates)
+        ];
+      }
+    }, (error => {
+      console.log(" rating data error : ", error);
+    }))
   }
 }

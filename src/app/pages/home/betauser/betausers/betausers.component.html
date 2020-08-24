@@ -49,8 +49,8 @@
 
             <!-- Area of interest Column -->
             <ng-container matColumnDef="Area of interest">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Area of interest
-                    <mat-select>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <mat-select placeholder="Area of interest">
                         <mat-option (onSelectionChange)="applyFilter('Clear')">All Intrests</mat-option>
                         <mat-option *ngFor="let dept of Areaofinterest1" (onSelectionChange)="applyFilter(dept)">{{dept}}</mat-option>
                     </mat-select>
@@ -75,4 +75,3 @@
 </mat-grid-list>
 <mat-paginator appStylePaginatorDirective [showFirstLastButtons]='false' [showTotalPages]="5" [length]="100" [pageSize]="10">
 </mat-paginator>
-<router-outlet></router-outlet>

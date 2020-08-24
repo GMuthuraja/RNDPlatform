@@ -104,7 +104,14 @@ h4
 ::-ms-input-placeholder { /* Microsoft Edge */
  color: #808080;
 }
-
+.mrgn0
+{
+  margin: 0;
+}
+.pad0
+{
+  margin: 0;
+}
 .msgError
 {
 color: #C80202;
@@ -141,13 +148,13 @@ margin-top:8px;
 margin-bottom:8px;
 }
 legend {
-font-size: 2rem;
+font-size: 1.8rem;
 color:$colorPrimary;
 font-family: "Helvetica" !important;
 }
 input, select, textarea
 {
-font-size: 2rem;
+font-size: 1.8rem;
 color:$colorPrimary;
 border:none !important;
 width:100%;
@@ -183,6 +190,10 @@ outline:none !important
 .btnLavender
 {
   background:$btnLavender;
+}
+.bold
+{
+  font-weight: bold;
 }
 .flex
 {
@@ -297,4 +308,38 @@ td
 {
   padding-top:10px !important;
   padding-bottom:10px !important;
+}
+
+
+
+
+
+// Paginator style
+.mat-paginator-page-size {
+  display: none !important;
+}
+
+.mat-paginator-range-label {
+  display: none !important;
+}
+
+.mat-paginator-container {
+  justify-content: center !important;
+}
+
+.mat-paginator-icon {
+  display: none !important;
+}
+
+.mat-paginator-navigation-next:after {
+  content: 'Next' !important;
+
+}
+
+.mat-paginator-navigation-previous:after {
+  content: 'Pervious' !important;
+}
+
+.mat-paginator-container {
+  margin-top: 10px !important;
 }

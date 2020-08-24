@@ -4,15 +4,17 @@ import { CommonModule } from '@angular/common';
 import { IdeasRoutingModule } from './ideas-routing.module';
 import { StaffIdeasComponent } from './staff-ideas/staff-ideas.component';
 import { MaterialModule } from '../../../shared/modules/material/material.module';
-import { StylePaginatorDirectiveDirective } from '../ideas/staff-ideas/style-paginator-directive.directive';
-
+import { ShareModule } from '../../../shared/modules/share/share.module';
+import { IdeashomeComponent } from './ideashome/ideashome.component';
 
 @NgModule({
-  declarations: [StaffIdeasComponent,StylePaginatorDirectiveDirective],
+  declarations: [StaffIdeasComponent, IdeashomeComponent],
   imports: [
     CommonModule,
-    IdeasRoutingModule, MaterialModule
+    IdeasRoutingModule, 
+    MaterialModule,
+    ShareModule
   ],
-  entryComponents: [StylePaginatorDirectiveDirective]
+  entryComponents: []
 })
 export class IdeasModule { }

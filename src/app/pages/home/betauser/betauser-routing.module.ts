@@ -4,8 +4,10 @@ import { BetausersComponent } from './betausers/betausers.component';
 import { BetauserhomeComponent } from './betauserhome/betauserhome.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', component: BetauserhomeComponent },
-  { path: 'beta-users', component: BetausersComponent },
+  { path: '', redirectTo: '', component: BetausersComponent },
+  { path: 'beta-users', component: BetausersComponent},
+  { path: 'beta-home', component: BetausersComponent},
+  
 ];
 
 @NgModule({

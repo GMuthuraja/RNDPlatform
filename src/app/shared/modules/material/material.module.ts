@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select';
 import { ChartsModule } from 'ng2-charts';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import { ChartsModule } from 'ng2-charts';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    ChartsModule
+    ChartsModule,
+    MatSlideToggleModule
   ],
   exports: [
     MatGridListModule,
@@ -42,7 +44,8 @@ import { ChartsModule } from 'ng2-charts';
     MatPaginatorModule,
     MatInputModule,
     MatSelectModule,
-    ChartsModule
+    ChartsModule,
+    MatSlideToggleModule
   ]
 })
 export class MaterialModule { }

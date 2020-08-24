@@ -1,0 +1,130 @@
+.betauser_grid {
+    // padding: 48px;
+    .betauser_head_div {
+        float: left;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 25px;
+        img {
+            float: left;
+            margin-right: 20px
+        }
+        h1 {
+            float: left;
+            color: #4F758F !important;
+            padding-top: 40px;
+            font-weight: bold;
+            margin: 0 !important;
+        }
+        div button {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            color: #FFFFFF;
+            background-color: #9B358F;
+            border-radius: 5px;
+            margin-right: 25px;
+            width: 250px;
+            height: 40px;
+        }
+    }
+}
+
+.mat-table {
+    font-family: Helvetica;
+}
+
+.beatuser-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 20px;
+    padding-right: 50px;
+    margin-top: 8px;
+}
+
+button {
+    font-size: 1.8rem;
+    font-weight: bold;
+    min-height: 20px;
+    border: none !important;
+    float: right !important;
+    color: #0076FF;
+    background: white;
+    font-weight: bold;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+    color: black;
+    // border-bottom-width: 1px;
+    // border-bottom-style: solid;
+    // border-bottom-color: rgba(0, 0, 0, 0.12)
+}
+
+.mat-input-underline {
+    display: none;
+}
+
+// .mat-select {
+//     //display: inline-block;
+//     // width: 0% !important;
+//     outline: none;
+//     margin: 0 4;
+//     margin-left: 16px;
+//     
+// }
+.mat-select-value {
+    max-width: 0;
+    display: table-cell;
+    width: 75% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mat-select-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent !important;
+    border-right: 6px solid transparent !important;
+    border-top: 6px solid !important;
+    margin: 0 4px !important;
+    color: #000000 !important;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: #FCFCFC;
+}
+
+.mat-row:nth-child(even) {
+    background-color: #F0F0F0;
+}
+
+mat-cell {
+    margin-top: 10px;
+    // border-bottom-color: rgba(0, 0, 0, 0.12);
+    // border-bottom-width: 1px;
+    // border-bottom-style: solid;
+}
+
+mat-cell:last-child {
+    color: #FF0000 !important;
+}

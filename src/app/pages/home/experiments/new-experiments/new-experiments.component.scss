@@ -1,0 +1,139 @@
+@import '../../../../../../src/theme/variables.scss';
+
+.titleHolder {
+  margin-bottom:20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  img {
+      height:50px;
+      float: left;
+      margin-right:20px
+  }
+  h4 {
+      float: left;
+      font-size: 34px;
+      color: #707070;
+      font-weight: bold;
+      margin-bottom: 0 !important;
+      background-image:url("/src/assets/images/beaker_small.svg");
+  }
+}
+.beaker
+{
+  img {
+    height:50px;
+  }
+}
+.formsHolder {
+  .titleHolder {
+    padding-left:2%;
+  }
+}
+.formsHolder > div
+{
+  height:auto;
+  display: table;
+  width:100%;
+
+  .form50
+  {
+    width:46%;
+    padding:0 2%;
+    display: table-cell;
+    overflow-y: auto;
+  }
+}
+mat-slide-toggle {
+  margin: 10px 10px;
+  display: inline-block;
+}
+.width25
+{
+  width:25%;
+}
+.width35
+{
+  width:35%;
+}
+.width75
+{
+  width:75%;
+}
+.width65
+{
+  width:65%;
+}
+.JCC
+{
+  display: flex;
+  align-items: center;
+  padding:0 10px;
+}
+input[type="file"]{
+  -webkit-appearance: none;
+  text-align: left;
+  -webkit-rtl-ordering: left;
+  width:100% !important;
+}
+input[type="file"]::-webkit-file-upload-button{
+  -webkit-appearance: none;
+  float: right;
+  margin: 0;
+  padding:5px 20px;
+  border: none !important;
+  border-radius: 0px;
+  background: $fileUpload;
+  // background-image: -webkit-gradient(linear, left bottom, left top, from(#d2d0d0), to(#f0f0f0));
+  // background-image: -moz-linear-gradient(90deg, #d2d0d0 0%, #f0f0f0 100%);
+}
+.file::before {
+  display: inline-block;
+}
+fieldset.disable
+{
+ opacity:0.4;
+}
+input:disabled
+{
+  background:transparent;
+}
+.btnEdit
+{
+  //display: inline-block;
+  background:$fileUpload;
+  //align-self: flex-end;
+  margin:0;
+}
+.btnEdit:disabled, input:disabled
+{
+  //display: inline-block;
+  background:transparent;
+
+}
+.fillHght
+{
+  display:flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+/* CSS to change Default/'Accent' color */
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: $slideToggleChecked; /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: $slideToggleCheckedBase;  /*replace with your color*/
+}
+
+/* CSS to change 'Primary' color */
+
+::ng-deep .mat-slide-toggle:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: $slideToggle;
+}
+
+::ng-deep .mat-slide-toggle:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: $slideToggleBase;
+}
+

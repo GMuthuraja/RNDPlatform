@@ -2,6 +2,8 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { Idea_DATA,Filter } from '../../../../utils/constants';
 import { trigger, state, transition, animate, style } from '@angular/animations';
 import { MatTableDataSource } from '@angular/material/table';
+
+
 @Component({
   selector: 'app-staff-ideas',
   templateUrl: './staff-ideas.component.html',
@@ -18,6 +20,8 @@ import { MatTableDataSource } from '@angular/material/table';
     ])
   ],
 })
+
+
 export class StaffIdeasComponent implements OnInit {
 
   displayedSuggestionColumns: string[] = ['StaffName', 'Payroll', 'AreaofIdea', 'Idea','moreDetail'];

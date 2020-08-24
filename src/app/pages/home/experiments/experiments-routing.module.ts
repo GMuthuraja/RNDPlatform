@@ -7,6 +7,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { RatingsComponent } from '../experiments/ratings/ratings.component';
+import { ExperimentshomeComponent } from './experimentshome/experimentshome.component';
 
 const routes: Routes = [
   { path: '', component: ViewExperimentsComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'summary', component: SummaryComponent },
   { path: 'ratings', component: RatingsComponent },
   { path: 'feedback', component: FeedbackComponent },
-  { path: 'add-user', component: AddUsersComponent }
+  { path: 'add-user', component: AddUsersComponent },
+  { path: 'experiments-home', component: ExperimentshomeComponent }
 ];
 
 @NgModule({

@@ -1,1 +1,66 @@
-<p>new-experiments works!</p>
+<div class="content">
+  <div class="formsHolder">
+    <div class="titleHolder">
+      <img src="../assets/images/beaker_small.svg" class="beaker">
+      <h4>New Experiment</h4>
+    </div>
+    <div>
+    <div class="form50">
+      <div class="flex">
+      <fieldset class="width65">
+        <legend>Experiment Name</legend>
+        <input type="text" placeholder="Use meaningiful name">
+      </fieldset>
+      <div class="width35 JCC bold">
+        Mobile <mat-slide-toggle></mat-slide-toggle> Web
+      </div>
+    </div>
+    <fieldset>
+      <legend>Android</legend>
+      <input type="text" placeholder="Paste app link here">
+    </fieldset>
+    <fieldset>
+      <legend>IOS</legend>
+      <input type="text" placeholder="Paste app link here">
+    </fieldset>
+    <fieldset>
+      <legend>Description</legend>
+    <textarea rows="3" placeholder="Short and Clear"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Cover Image</legend>
+      <label for="file-upload" class="custom-file-upload">
+        Coverimage.PNG
+    </label>
+      <input id="file-upload" type="file" value="" class="file">
+    </fieldset>
+    <fieldset>
+      <legend>Topic</legend>
+      <input type="text" placeholder="">
+    </fieldset>
+    <div class="flex">
+      <fieldset class="width65 disable">
+        <legend>Users</legend>
+        <div class="flex">
+        <input type="text" class="width75" disabled placeholder="Add Specific Audience">
+        <input type="button" value="Edit" disabled class="btnEdit width25">
+      </div>
+      </fieldset>
+      <div class="width35 JCC bold">
+        Public <mat-slide-toggle [checked]="checked"></mat-slide-toggle> Private
+      </div>
+    </div>
+    <div class="flex">
+      <button type="submit" class="full btnLavender">Continue</button>
+    </div>
+    </div>
+    <div class="form50 ">
+      <fieldset class="fillHght">
+        <legend>Instruction Content</legend>
+        <textarea rows="27">Paste your clear Instructions in HTML</textarea>
+      </fieldset>
+    </div>
+    </div>
+    </div>
+    </div>
+

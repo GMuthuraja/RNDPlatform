@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StylePaginatorDirectiveDirective } from '../../directive/style-paginator-directive.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [StylePaginatorDirectiveDirective],
   imports: [
     CommonModule,
     FormsModule,
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StylePaginatorDirectiveDirective
   ]
 })
 export class ShareModule { }

@@ -30,6 +30,10 @@
             td {
                 padding: 0 10px;
             }
+            td { 
+                padding-top: 0 !important;
+                padding-bottom:0 !important
+            }
             th:last-child {
                 color: #007FFD !important;
             }

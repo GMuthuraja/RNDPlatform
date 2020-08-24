@@ -10,6 +10,8 @@ import { NewExperimentsComponent } from './new-experiments/new-experiments.compo
 import { AddUsersComponent } from './add-users/add-users.component';
 import { SummaryComponent } from './summary/summary.component';
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
+import { ShareModule } from 'src/app/shared/modules/share/share.module';
+import { ExperimentshomeComponent } from './experimentshome/experimentshome.component';
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import { MaterialModule } from 'src/app/shared/modules/material/material.module'
     RatingsComponent,
     NewExperimentsComponent,
     AddUsersComponent,
-    SummaryComponent],
+    SummaryComponent,
+    ExperimentshomeComponent],
   imports: [
     CommonModule,
     ExperimentsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ShareModule
   ]
 })
 export class ExperimentsModule { }

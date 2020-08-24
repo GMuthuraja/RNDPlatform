@@ -51,19 +51,31 @@
     // border-bottom-color: rgba(0, 0, 0, 0.12)
 }
 
-.mat-select {
-    //display: inline-block;
-    width: 0% !important;
-    outline: none;
-    margin: 0 4;
-    margin-left: 16px;
-    .mat-select-value {
-        max-width: 0;
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+.mat-input-underline {
+    display: none;
+}
+
+// .mat-select {
+//     //display: inline-block;
+//     // width: 0% !important;
+//     outline: none;
+//     margin: 0 4;
+//     margin-left: 16px;
+//     
+// }
+.mat-select-value {
+    max-width: 0;
+    display: table-cell;
+    width: 82% !important;
+    overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mat-select-placeholder {
+    font-weight: bold;
+    color: black;
+    font-family: Helvetica;
 }
 
 .mat-select-arrow {
@@ -72,10 +84,7 @@
     border-left: 6px solid transparent !important;
     border-right: 6px solid transparent !important;
     border-top: 6px solid !important;
-    margin: 0 4px;
-}
-
-.mat-select-arrow {
+    margin: 0 4px !important;
     color: #000000 !important;
 }
 
@@ -97,52 +106,9 @@
     background-color: #F0F0F0;
 }
 
-::ng-deep .mat-select-arrow {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent !important;
-    border-right: none !important;
-    border-top: 10px solid !important;
-    margin: 0px 0px !important;
-    border-image-source: url('../../../../../assets/images/arrow.svg') !important;
-    border-image-repeat: stretch !important;
-    //color: #000000 !important;
-}
-
-.mat-paginator-page-size {
-    display: none !important;
-}
-
-.mat-paginator-range-label {
-    display: none !important;
-}
-
-.mat-paginator-container {
-    justify-content: center !important;
-}
-
-.mat-paginator-icon {
-    display: none !important;
-    //     content: 'Your text'
-}
-
-.mat-paginator-navigation-next:after {
-    content: 'Next' !important;
-    //display: none !important;
-    // content: 'test'!important;
-}
-
-.mat-paginator-navigation-previous:after {
-    content: 'Pervious' !important;
-}
-
 mat-cell {
     margin-top: 10px;
     // border-bottom-color: rgba(0, 0, 0, 0.12);
     // border-bottom-width: 1px;
     // border-bottom-style: solid;
-}
-
-.mat-paginator-container {
-    margin-top: 10px !important;
 }

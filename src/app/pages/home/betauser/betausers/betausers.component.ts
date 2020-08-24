@@ -1,14 +1,18 @@
-import { Component, OnInit,ViewChild,ViewEncapsulation } from '@angular/core';
+import { Component, OnInit,ViewChild,ViewEncapsulation, Directive } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import{ MatTableDataSource} from '@angular/material/table';
 import{MatSort}from '@angular/material/sort';
+
 @Component({
   selector: 'app-betausers',
   templateUrl: './betausers.component.html',
   styleUrls: ['./betausers.component.scss'],
   encapsulation: ViewEncapsulation.None 
+  
 })
+
 export class BetausersComponent implements OnInit {
+  
   @ViewChild (MatSort,{static: false}) sort: MatSort;
   @ViewChild (MatPaginator,{static: false}) paginator: MatPaginator;
     title = 'PageNation';
@@ -17,12 +21,13 @@ export class BetausersComponent implements OnInit {
     pageLength:any=100
     pageSize:any=5
     userData:any=[];
+    selected='Area of interest'
      Areaofinterest1 =['Operation','Cost','Revenue','Others']
      Wayofcontact1=['Email', 'phone', 'notification']
      email=['maali@saudia.com', 'mail@saudia.com', 'mailll@saudia.com']
      Position=['IT SPECIALIST','Soft SPECIALIST','Tech SPECIALIST']
      name =['Majed','Majed Taha','Majed Taha Ali']
-  constructor() {
+  constructor() { 
     // Create 100 users
     const users: UserData[] = [];
     

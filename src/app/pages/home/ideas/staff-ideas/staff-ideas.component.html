@@ -20,9 +20,9 @@
             </ng-container>
             <!-- Weight Column -->
             <ng-container matColumnDef="AreaofIdea">
-                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>Area of idea
-                    <mat-select>
-                        <mat-option (onSelectionChange)="applyFilter('Clear')">All Intrests</mat-option>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <mat-select placeholder="Area of idea">
+                        <mat-option (onSelectionChange)="applyFilter('Clear')">All Idea</mat-option>
                         <mat-option *ngFor="let dept of FilterData" (onSelectionChange)="applyFilter(dept)">{{dept}}</mat-option>
                     </mat-select>
                 </mat-header-cell>
