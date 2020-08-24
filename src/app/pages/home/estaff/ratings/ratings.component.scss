@@ -1,0 +1,93 @@
+.rating_grid {
+    // padding: 48px;
+    .rating_head_div {
+        float: left;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        img {
+            float: left;
+            margin-right:20px
+        }
+        h1 {
+            float: left;
+            color: #707070 !important;
+            font-weight: bold;
+            margin: 0 !important;
+        }
+    }
+    .rating_table_div {
+        float: left;
+        width: 58%;
+        margin-top: 20px;
+        table {
+            padding: 0;
+        }
+        p {
+            color: #007FFD !important;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        th {
+            font-weight: bold;
+            color: black;
+        }
+    }
+    .rating_chart_div {
+        display: block;
+        width: 42%;
+        float: left;
+        canvas {
+            width: 630px !important;
+            height: 340px !important;
+        }
+        div.rate_div {
+            width: 100%;
+            text-align: center;
+            margin-top: 14px;
+            .no_of_rates {
+                text-align: center;
+                font-size: 20px;
+                margin-right: 10px;
+                font-weight: bold;
+            }
+            .rate {
+                margin-left: 10px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.rating_expand_div {
+    overflow: hidden;
+    display: flex;
+}
+.rating_expand_personal_div {
+    width: 50%;
+    div {
+        margin: 5px 0;
+        span {
+            color: #6A6A6A;
+        }
+    }
+}
+.rating_expand_description_div {
+    width: 50%;
+    text-align: left;
+    font-size: 12px;
+    padding: 8px;
+}
+tr.rating-detail-row {
+    height: 0 !important;
+}
+  
+tr.rating-element-row:not(.rating-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.rating-element-row:not(.rating-expanded-row):active {
+   background: #efefef;
+}
