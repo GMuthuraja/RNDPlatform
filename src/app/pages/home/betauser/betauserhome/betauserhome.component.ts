@@ -14,7 +14,7 @@ export class BetauserhomeComponent implements OnInit {
   }
 
   go() {
-    this.router.navigate(['/dashboard/beta-users'])
+    this.router.navigateByUrl('/(beta-user:betausers)');
   }
 
 }

@@ -11,7 +11,6 @@ import { MaterialModule } from '../../../shared/modules/material/material.module
 @NgModule({
   declarations: [
     ViewAnalyticsComponent,
-    RatingsComponent,
     SuggestionComponent
   ],
   imports: [

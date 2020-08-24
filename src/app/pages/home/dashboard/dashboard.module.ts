@@ -6,12 +6,14 @@ import { MaterialModule } from '../../../shared/modules/material/material.module
 import { StylePaginatorDirectiveDirective } from '../../../shared/directive/style-paginator-directive.directive';
 import { BetausersComponent } from '../betauser/betausers/betausers.component';
 import { RatingsComponent } from '../estaff/ratings/ratings.component';
+import { BetauserhomeComponent } from '../betauser/betauserhome/betauserhome.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     BetausersComponent,
+    BetauserhomeComponent,
     RatingsComponent,
     StylePaginatorDirectiveDirective
   ],
