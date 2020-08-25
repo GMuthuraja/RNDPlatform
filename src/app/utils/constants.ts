@@ -27,6 +27,31 @@ export const CONTENT_TYPE = 'Content-Type';
 export const CONTENT_TYPE_VALUE = 'application/x-www-form-urlencoded';
 
 
+//Router Navigation
+export const NAV_LOGIN = 'login';
+export const NAV_OTP = 'otp';
+export const NAV_DASHBOARD = 'dashboard';
+export const NAV_BETA_HOME = '/dashboard/beta-home';
+export const NAV_IDEAS_HOME = '/dashboard/ideas-home';
+export const NAV_ESTAFF_HOME = '/dashboard/estaff-home';
+export const NAV_EXP_HOME = '/dashboard/experiments-home';
+export const NAV_NOTIFY_HOME = '/dashboard/notification-home';
+export const NAV_BETA_USERS = '/dashboard/beta-users';
+export const NAV_VIEW_ANALYTICS = '/dashboard/view-analytics';
+export const NAV_ESTFF_RATINGS = '/dashboard/estaff-ratings';
+export const NAV_SUGGESTIONS = '/dashboard/suggestions';
+export const NAV_VIEW_EXP = '/dashboard/view-experiments';
+export const NAV_NEW_EXP = '/dashboard/new-experiments';
+export const NAV_USERS = '/dashboard/users';
+export const NAV_SUMMARY = '/dashboard/summary';
+export const NAV_EXP_RATINGS = '/dashboard/exp-ratings';
+export const NAV_FEEDBACK = '/dashboard/feedback';
+export const NAV_ADD_USER = '/dashboard/add-user';
+export const NAV_STAFF_IDEAS = '/dashboard/staff-ideas';
+export const NAV_VIEW_NOTIFICATION = '/dashboard/view-notification';
+export const NAV_ADD_NOTIFICATION = '/dashboard/add-notification';
+
+
 
 // Push Notification constant
 // export const PUSH_MESSAGE = "";

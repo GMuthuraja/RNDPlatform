@@ -29,11 +29,14 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: 'beta-home', component: BetauserhomeComponent },
-      { path: 'beta-user', component: BetausersComponent },
+      { path: 'estaff-home', component: EstaffhomeComponent },
+      { path: 'experiments-home', component: ExperimentshomeComponent },
+      { path: 'ideas-home', component: IdeashomeComponent },
+      { path: 'notification-home', component: NotificationhomeComponent },
+      { path: 'beta-users', component: BetausersComponent },
       { path: 'view-analytics', component: ViewAnalyticsComponent },
       { path: 'estaff-ratings', component: RatingsComponent },
       { path: 'suggestions', component: SuggestionComponent },
-      { path: 'estaff-home', component: EstaffhomeComponent },
       { path: 'view-experiments', component: ViewExperimentsComponent },
       { path: 'new-experiments', component: NewExperimentsComponent },
       { path: 'users', component: UsersComponent },
@@ -41,12 +44,9 @@ const routes: Routes = [
       { path: 'exp-ratings', component: ExpRatingsComponent },
       { path: 'feedback', component: FeedbackComponent },
       { path: 'add-user', component: AddUsersComponent },
-      { path: 'experiments-home', component: ExperimentshomeComponent },
       { path: 'staff-ideas', component: StaffIdeasComponent },
-      { path: 'ideas-home', component: IdeashomeComponent },
       { path: 'view-notification', component: ViewNotificationComponent },
       { path: 'add-notification', component: AddNotificationComponent },
-      { path: 'notification-home', component: NotificationhomeComponent }
     ]
   }
 ];

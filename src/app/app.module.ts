@@ -9,7 +9,6 @@ import { ShareModule } from './shared/modules/share/share.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 import { ApiPrefixInterceptor } from './core/interceptors/api-prefix.interceptor';
-import { LoaderComponent } from './shared/components/loader/loader.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OtpComponent } from './pages/otp/otp.component';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../../core/services/utility.service';
 import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
-import { CUSTID_REGEX, SUCCESS, USER_INFO_KEY, PWD_KEY, LID_KEY } from '../../utils/constants';
+import { CUSTID_REGEX, SUCCESS, USER_INFO_KEY, PWD_KEY, LID_KEY, NAV_DASHBOARD, NAV_OTP } from '../../utils/constants';
 import { EncryptionService } from '../../core/services/encryption.service';
 import { LocalStorageService } from '../../core/services/local-storage.service';
 import { GlobalStorageService } from '../../core/services/global-storage.service';
@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
             //Hard coded
             //this.isLoaderVisible = false;
             //this.storeSessionData(res["UserInfo"], userId, password);
-            //this.router.navigate(['/dashboard']);
+            //this.router.navigate([NAV_DASHBOARD]);
 
             this.sendOTP(res["UserInfo"], userId, password);
           }
@@ -155,7 +155,7 @@ export class LoginComponent implements OnInit {
           this.storeSessionData(res, userId, password);
 
           //Navigate into home page
-          this.router.navigate(['/dashboard']);
+          this.router.navigate([NAV_DASHBOARD]);
         } else {
           console.log(password);
           //Constructing params to send next page
@@ -172,7 +172,7 @@ export class LoginComponent implements OnInit {
           this.isLoaderVisible = false;
 
           //Navigate to OTP page with param values
-          this.router.navigate(['/otp'], navigationExtras);
+          this.router.navigate([NAV_OTP], navigationExtras);
         }
       }
     }, (error => {
