@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StylePaginatorDirectiveDirective } from '../../directive/style-paginator-directive.directive';
+import { LoaderComponent } from '../../components/loader/loader.component';
 
 @NgModule({
-  declarations: [StylePaginatorDirectiveDirective],
+  declarations: [
+    StylePaginatorDirectiveDirective,
+    LoaderComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,7 +19,8 @@ import { StylePaginatorDirectiveDirective } from '../../directive/style-paginato
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StylePaginatorDirectiveDirective
+    StylePaginatorDirectiveDirective,
+    LoaderComponent
   ]
 })
 export class ShareModule { }

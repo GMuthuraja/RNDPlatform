@@ -18,9 +18,9 @@ export interface VirtualRatingElement {
 }
 
 @Component({
-  selector: 'app-ratings',
-  templateUrl: './ratings.component.html',
-  styleUrls: ['./ratings.component.scss'],
+  selector: 'app-exp-ratings',
+  templateUrl: './exp-ratings.component.html',
+  styleUrls: ['./exp-ratings.component.scss'],
   animations: [
     trigger("ratingExpand", [
       state("collapsed", style({ height: "0px", minHeight: "0" })),
@@ -32,7 +32,7 @@ export interface VirtualRatingElement {
     ])
   ],
 })
-export class RatingsComponent implements OnInit {
+export class ExpRatingsComponent implements OnInit {
   displayedRatingColumns: string[] = ['StaffName', 'Payroll', 'Rate'];
   ratingSource;
 

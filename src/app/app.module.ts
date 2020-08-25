@@ -17,8 +17,7 @@ import { OtpComponent } from './pages/otp/otp.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    OtpComponent,
-    LoaderComponent
+    OtpComponent
   ],
   imports: [
     BrowserModule,
