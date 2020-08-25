@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
 import 'chart.piecelabel.js';
@@ -9,6 +9,9 @@ import {
   transition,
   trigger
 } from "@angular/animations";
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { RatingElement } from '../../estaff/ratings/ratings.component';
 
 
 export interface VirtualRatingElement {
@@ -16,6 +19,7 @@ export interface VirtualRatingElement {
   payroll: string;
   rate: number;
 }
+
 
 @Component({
   selector: 'app-exp-ratings',
@@ -31,10 +35,13 @@ export interface VirtualRatingElement {
       )
     ])
   ],
+  encapsulation: ViewEncapsulation.None
 })
 export class ExpRatingsComponent implements OnInit {
   displayedRatingColumns: string[] = ['StaffName', 'Payroll', 'Rate'];
-  ratingSource;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  ratingSource: MatTableDataSource<RatingElement>;
+  ratingData: any = [];
 
   // Pie
   public pieChartOptions: any = {
@@ -121,9 +128,35 @@ export class ExpRatingsComponent implements OnInit {
         staffName: "Majed Taha Ali",
         payroll: '11020229',
         rate: 4
+      },
+      {
+        staffName: "Majed Taha Ali",
+        payroll: '11020229',
+        rate: 5
+      },
+      {
+        staffName: "Majed Taha Ali",
+        payroll: '11020229',
+        rate: 4
+      },
+      {
+        staffName: "Majed Taha Ali",
+        payroll: '11020229',
+        rate: 5
+      },
+      {
+        staffName: "Majed Taha Ali",
+        payroll: '11020229',
+        rate: 4
       }
     ];
-    this.ratingSource = VIRTUAL_RATINGS_DATA;
+    this.ratingData = VIRTUAL_RATINGS_DATA;
+    setTimeout(() => {
+      this.ratingSource.paginator = this.paginator;
+    }, 1000);
+    // Assign the data to the data source for the table to render
+    this.ratingSource = new MatTableDataSource(this.ratingData);
+    console.log(this.ratingSource);
   }
 
 }

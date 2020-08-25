@@ -1,3 +1,8 @@
+@import '../../../../../theme/variables.scss';
+.content
+{
+    padding:5rem;
+}
 .rating_grid {
     // padding: 48px;
     .rating_head_div {
@@ -21,6 +26,7 @@
         width: 58%;
         margin-top: 20px;
         table {
+            width: 100%;
             padding: 0;            
             td.rate {
                 font-weight: bold;
@@ -28,15 +34,37 @@
             td {
                 padding: 0 20px;
             }
-    td { 
-        padding-top: 0 !important;
-        padding-bottom:0 !important
-    }
+            span.text_hidden {
+                width: 320px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                /* word-break: break-all; */
+                overflow: hidden;
+                display: block;
+            }
+            td {
+                padding-top: 0 !important;
+                padding-bottom:0 !important
+            }
+            td.width60
+            {
+                width:60%!important;
+                padding-right:50px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
             th {
                 font-weight: bold;
                 color: black;
                 padding: 0 20px;
+            }
+            tr:nth-child(4n+1) {
+              background-color: $alternate;
+            }
+            th {
+              background-color: $white;
             }
         }
         p {
@@ -44,6 +72,12 @@
             font-weight: bold;
             font-size: 12px;
             margin-top: 10px;
+        }
+        tr:nth-child(4n+1) {
+          background-color: $alternate;
+        }
+        th {
+          background-color: $white;
         }
     }
     .rating_chart_div {
@@ -53,6 +87,7 @@
         canvas {
             width: 630px !important;
             height: 340px !important;
+            margin: auto !important;
         }
         div.rate_div {
             width: 100%;
@@ -77,7 +112,7 @@
     display: flex;
 }
 .rating_expand_personal_div {
-    width: 50%;
+    width: 39.5%;
     div {
         margin: 5px 0;
         span {
@@ -102,6 +137,46 @@ tr.rating-element-row:not(.rating-expanded-row):hover {
 tr.rating-element-row:not(.rating-expanded-row):active {
    background: #efefef;
 }
-.loadingDiv {
-    
+
+
+.mat-paginator-page-size {
+    display: none !important;
+}
+
+.mat-paginator-range-label {
+    display: none !important;
+}
+
+.mat-paginator-container {
+    justify-content: center !important;
+}
+
+.mat-paginator-icon {
+    display: none !important;
+    //     content: 'Your text'
+}
+
+.mat-paginator-navigation-next:after {
+    content: 'Next' !important;
+    //display: none !important;
+    // content: 'test'!important;
+}
+
+.mat-paginator-navigation-previous:after {
+    content: 'Pervious' !important;
+}
+
+.mat-paginator-container {
+    margin-top: 10px !important;
+}
+label
+{
+    width: 310px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+mat-paginator {
+    margin-top: 10px;
 }

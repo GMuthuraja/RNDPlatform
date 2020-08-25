@@ -106,11 +106,11 @@ export class LoginComponent implements OnInit {
           if (res["UserInfo"]) {
 
             //Hard coded
-            //this.isLoaderVisible = false;
-            //this.storeSessionData(res["UserInfo"], userId, password);
-            //this.router.navigate([NAV_DASHBOARD]);
+            this.isLoaderVisible = false;
+            this.storeSessionData(res["UserInfo"], userId, password);
+            this.router.navigate([NAV_DASHBOARD]);
 
-            this.sendOTP(res["UserInfo"], userId, password);
+            //this.sendOTP(res["UserInfo"], userId, password);
           }
         } else {
 

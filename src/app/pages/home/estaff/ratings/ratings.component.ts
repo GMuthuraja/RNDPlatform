@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
 import 'chart.piecelabel.js';
@@ -10,8 +10,9 @@ import {
   trigger
 } from "@angular/animations";
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
-import { USER_INFO_KEY } from 'src/app/utils/constants';
 import { RestApiService } from 'src/app/core/http/rest-api.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 export interface RatingElement {
@@ -39,12 +40,17 @@ export interface RatingElement {
       )
     ])
   ],
+  encapsulation: ViewEncapsulation.None
 })
 export class RatingsComponent implements OnInit {
   displayedRatingColumns: string[] = ['StaffName', 'Payroll', 'Rate', 'Comment', 'moreDetail'];
-  ratingSource: RatingElement[];
-  userInfo: any;
-
+  @ViewChild (MatPaginator,{static: false}) paginator: MatPaginator;
+  ratingSource: MatTableDataSource<RatingElement>;
+  rateData:any = [];
+  isLoaderVisible: boolean = false;
+  pageLength:any=100
+  pageSize:any=5
+  totalSourceLength:any;
   // Pie
   public pieChartOptions: any = {
     responsive: true,
@@ -93,40 +99,41 @@ export class RatingsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUserInfo();
     this.getRatingData();
   }
-
+  
   /**
-   * Get User info
-  */
-  getUserInfo() {
-    if(this.storageService.getLocalStorage(USER_INFO_KEY))
-    var userInfo = JSON.parse(this.storageService.getLocalStorage(USER_INFO_KEY));
-    this.userInfo = userInfo ? userInfo[0] : "";
-    console.log("userInfo : ", this.userInfo);
+   * Set the paginator and sort after the view init since this component will
+   * be able to query its view for the initialized paginator and sort.
+   */
+  ngAfterViewInit() {
   }
 
   /**
    * Get Rating data
   */
   getRatingData() {
+    this.isLoaderVisible = true;
     this.api.getEstaffRating().subscribe(data => {
+      this.isLoaderVisible = false;
       console.log("Rate data : ", data);
       var output: any = data;
       if (output && output.length > 0) {
-        this.ratingSource = output;
-        this.ratingSource.map(rateVal => {
+        // this.ratingSource = output;
+        this.rateData = output;
+        var ratingSource:any = this.rateData;
+        this.totalSourceLength = this.rateData.length;
+        ratingSource.map(rateVal => {
           if (rateVal.comment == null || rateVal.comment == "") {
             rateVal.comment = "-";
           }
         });
         var r1, r2, r3, r4, r5, totalRates;
-        r1 = this.ratingSource.filter(val => val.rate == 1);
-        r2 = this.ratingSource.filter(val => val.rate == 2);
-        r3 = this.ratingSource.filter(val => val.rate == 3);
-        r4 = this.ratingSource.filter(val => val.rate == 4);
-        r5 = this.ratingSource.filter(val => val.rate == 5);
+        r1 = ratingSource.filter(val => val.rate == 1);
+        r2 = ratingSource.filter(val => val.rate == 2);
+        r3 = ratingSource.filter(val => val.rate == 3);
+        r4 = ratingSource.filter(val => val.rate == 4);
+        r5 = ratingSource.filter(val => val.rate == 5);
         totalRates = r1.length + r2.length + r3.length + r4.length + r5.length;
         console.log("r1 value : ", Math.floor((r1.length) * 100 / totalRates));
         this.pieChartData = [
@@ -137,7 +144,14 @@ export class RatingsComponent implements OnInit {
           Math.floor((r5.length * 100) / totalRates)
         ];
       }
+      setTimeout(() => {
+        this.ratingSource.paginator = this.paginator;
+      }, 1000);
+      // Assign the data to the data source for the table to render
+      this.ratingSource = new MatTableDataSource(this.rateData);
+      console.log(this.ratingSource);
     }, (error => {
+      this.isLoaderVisible = false;
       console.log(" rating data error : ", error);
     }))
   }

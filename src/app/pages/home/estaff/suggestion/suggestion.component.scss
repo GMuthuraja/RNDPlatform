@@ -1,5 +1,10 @@
+@import '../../../../../theme/variables.scss';
+.content
+{
+  padding:5rem;
+  max-width: -webkit-fill-available;
+}
 .suggestion_grid {
-    // padding: 48px;
     .suggestion_head_div {
         float: left;
         width: 100%;
@@ -22,7 +27,8 @@
         margin-top: 20px;
         table {
             padding: 0;
-            td { 
+            width: 100%;
+            td {
                 padding-top: 0 !important;
                 padding-bottom:0 !important
             }
@@ -33,13 +39,19 @@
             font-size: 12px;
             margin-top: 10px;
         }
-
+ 
         th {
             font-weight: bold;
             color: black;
         }
         th:last-child {
             color: #007FFD !important;
+        }
+        tr:nth-child(4n+1) {
+          background-color: $alternate;
+        }
+        th {
+          background-color: $white;
         }
     }
 }
@@ -48,7 +60,7 @@
     display: flex;
 }
 .suggestion_expand_personal_div {
-    width: 15%;
+    width: 30%;
     div {
         margin: 5px 0;
         span {
@@ -60,26 +72,50 @@
     width: 55%;
     text-align: left;
     font-size: 14px;
-    padding: 8px 12px;
+    padding: 8px 0;
 }
 .suggestion_expand_trello_div {
-    width: 30%;
-    text-align: right;
+    width: 10%;
+    text-align: left;
     line-height: 110px;
     font-size: 12px;
     padding: 8px;
     font-weight: bold;
-    margin-right: 30px;
     color: #D96D00;
 }
 tr.suggestion-detail-row {
     height: 0 !important;
 }
-  
+ 
 tr.suggestion-element-row:not(.suggestion-expanded-row):hover {
     background: whitesmoke;
 }
-
+ 
 tr.suggestion-element-row:not(.suggestion-expanded-row):active {
     background: #efefef;
+}
+ 
+th:first-child
+{
+  width:20%;
+}
+th:nth-last-child(3)
+{
+  width:10%;
+}
+th:nth-last-child(2)
+{
+  width:55%;
+  align-items: center;
+}
+label
+{
+    width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+mat-paginator {
+    margin-top: 10px;
 }

@@ -1,33 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { RestApiService } from 'src/app/core/http/rest-api.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
 @Component({
   selector: 'app-add-notification',
   templateUrl: './add-notification.component.html',
-  styleUrls: ['./add-notification.component.scss']
+  styleUrls: ['./add-notification.component.scss'],
+  encapsulation: ViewEncapsulation.None 
 })
 export class AddNotificationComponent implements OnInit {
-  notificationTopic:string;
-  notificationDescription:string;
-  notificationTitle:string;
-  constructor(
-    private api: RestApiService ) { }
+
+  panelOpenState: boolean = false;
+  content:any;
+  expand: boolean = false;
+  hide:boolean = false;
+  isOpen:boolean = false;
+  constructor() { }
 
   ngOnInit(): void {
+    this.content=['Beta Users ','Operation','Virtual Reality','Customer Experience']
   }
 
-  getTopicChange(topic) {
-    console.log("select topic : ", topic);
-  }
 
-  /**
-   * Push Notification Service
-  */
-  sendNotification() {
-    this.api.sendNotificationAPI(this.notificationTitle, this.notificationDescription, this.notificationTopic).subscribe(data=>{
-      var output:any = data;
-      console.log("Push notification success : ", output);
-    },(error=>{
-      console.log("Push notification error : ", error);
-    }));
-  }
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState
+}
+openclose(){
+this.expand=true;
+}
+visibletexbox(){
+  this.hide=true
+}
+
+addfield(){
+  this.hide=false
+  this.content[this.content.length]=['text']
+}
+
+data = [
+  {id:1, header:'Select Topic', content:this.content, expanded: false},
+ 
+]
 }

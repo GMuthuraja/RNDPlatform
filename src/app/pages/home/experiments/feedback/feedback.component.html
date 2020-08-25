@@ -1,81 +1,88 @@
-<mat-grid-list cols="1" class="feedback_grid">
-    <div class="feedback_head_div">
-        <img src="../../assets/images/beaker_small.svg" />
-        <h1>Virtual Reality's Feedback</h1>
-    </div>
-    <div class="feedback_table_div">
-        <table mat-table [dataSource]="feedbackSource" class="mat-elevation-z8" multiTemplateDataRows>
-            <!--- Note that these columns can be defined in any order.
-                          The actual rendered columns are set as a property on the row definition" -->
-            <!-- Position Column -->
-            <ng-container matColumnDef="StaffName">
-                <th mat-header-cell *matHeaderCellDef> Staff Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
-            </ng-container>
+<div class="content">
+    <mat-grid-list cols="1" class="feedback_grid">
+        <div class="feedback_head_div">
+            <img src="../../assets/images/beaker_small.svg" />
+            <h1>Virtual Reality's Feedback</h1>
+        </div>
+        <div class="feedback_table_div">
+            <table mat-table [dataSource]="feedbackSource" class="mat-elevation-z8" multiTemplateDataRows>
+                <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                <!-- Position Column -->
+                <ng-container matColumnDef="StaffName">
+                    <th mat-header-cell *matHeaderCellDef> Staff Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
+                </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="Payroll">
-                <th mat-header-cell *matHeaderCellDef> Payroll </th>
-                <td mat-cell *matCellDef="let element"> {{element.payroll}} </td>
-            </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="Payroll">
+                    <th mat-header-cell *matHeaderCellDef> Payroll </th>
+                    <td mat-cell *matCellDef="let element"> {{element.payroll}} </td>
+                </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="Rate">
-                <th mat-header-cell *matHeaderCellDef> Rate </th>
-                <td mat-cell *matCellDef="let element" class="feedback_rate"> {{element.rate}} </td>
-            </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Rate">
+                    <th mat-header-cell *matHeaderCellDef> Rate </th>
+                    <td mat-cell *matCellDef="let element" class="feedback_rate"> {{element.rate}} </td>
+                </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="Issues">
-                <th mat-header-cell *matHeaderCellDef> Issues </th>
-                <td mat-cell *matCellDef="let element"> {{element.issues}} </td>
-            </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Issues">
+                    <th mat-header-cell *matHeaderCellDef> Issues </th>
+                    <td mat-cell *matCellDef="let element"><label class="issues"> {{element.issues}} </label></td>
+                </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="Suggestions">
-                <th mat-header-cell *matHeaderCellDef> Suggestion </th>
-                <td mat-cell *matCellDef="let element"> {{element.suggestions}} </td>
-            </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Suggestions">
+                    <th mat-header-cell *matHeaderCellDef> Suggestion </th>
+                    <td mat-cell *matCellDef="let element" class="width60"><label class="suggestions"> {{element.description}} </label></td>
+                </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="moreDetail" *ngIf="!isAllExpanded">
-                <th mat-header-cell *matHeaderCellDef class="expandAll" (click)="toggleTableRows()">
-                    <span *ngIf="!isAllExpanded">Expand All</span>
-                    <span *ngIf="isAllExpanded">Colapse All</span>
-                </th>
-                <td mat-cell *matCellDef="let element">
-                    <p *ngIf="!element.expanded">More Details</p>
-                    <p *ngIf="element.expanded">Less Details</p>
-                </td>
-            </ng-container>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="moreDetail" *ngIf="!isAllExpanded">
+                    <th mat-header-cell *matHeaderCellDef class="expandAll" (click)="toggleTableRows()">
+                        <span *ngIf="!isAllExpanded">Expand All</span>
+                        <span *ngIf="isAllExpanded">Colapse All</span>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <p *ngIf="!element.expanded">More Details</p>
+                        <p *ngIf="element.expanded">Less Details</p>
+                    </td>
+                </ng-container>
 
-            <ng-container matColumnDef="expandedDetail">
-                <td mat-cell *matCellDef="let element;let i=index" [attr.colspan]="displayedFeedbackColumns.length">
-                    <div class="feedback_expand_div"
-                        [@feedbackExpand]="element.expanded ? 'expanded' : 'collapsed'">
-                        <div class="feedback_expand_personal_div">
-                            <div class="example-element-position"><span>Position : </span> MGR Digital Lab </div>
-                            <div class="example-element-symbol"><span> Email : </span>example@saudia.com </div>
-                            <div class="example-element-name"> <span>Mobile : </span>+96654545254 </div>
-                            <div class="example-element-name"> <span>Date : </span>10 Jun 2020 </div>
+                <ng-container matColumnDef="expandedDetail">
+                    <td mat-cell *matCellDef="let element;let i=index" [attr.colspan]="displayedFeedbackColumns.length">
+                        <div class="feedback_expand_div"
+                            [@feedbackExpand]="element.expanded ? 'expanded' : 'collapsed'">
+                            <div class="feedback_expand_personal_div">
+                                <div class="example-element-position"><span>Position : </span> MGR Digital Lab </div>
+                                <div class="example-element-symbol"><span> Email : </span>example@saudia.com </div>
+                                <div class="example-element-name"> <span>Mobile : </span>+96654545254 </div>
+                                <div class="example-element-name"> <span>Date : </span>10 Jun 2020 </div>
+                            </div>
+                            <div class="feedback_expand_issues_div">
+                                {{element.issues}}
+                            </div>
+                            <div class="feedback_expand_description_div">
+                                {{element.description}}
+                            </div>
+                            <div class="feedback_expand_trello_div">
+                                Move to Trello
+                            </div>
                         </div>
-                        <div class="feedback_expand_description_div">
-                            {{element.description}}
-                        </div>
-                        <div class="feedback_expand_trello_div">
-                            Move to Trello
-                        </div>
-                    </div>
-                </td>
-            </ng-container>
+                    </td>
+                </ng-container>
 
-            <!-- <tr mat-header-row *matHeaderRowDef="displayedFeedbackColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedFeedbackColumns;"></tr> -->
-            <tr mat-header-row *matHeaderRowDef="displayedFeedbackColumns"></tr>
-            <tr mat-row *matRowDef="let element; columns: displayedFeedbackColumns;" class="feedback-element-row"
-                [class.example-expanded-row]="element.expanded" (click)="element.expanded = !element.expanded">
-            </tr>
-            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="feedback-detail-row"></tr>
-        </table>
-    </div>
-</mat-grid-list>
+                <!-- <tr mat-header-row *matHeaderRowDef="displayedFeedbackColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedFeedbackColumns;"></tr> -->
+                <tr mat-header-row *matHeaderRowDef="displayedFeedbackColumns"></tr>
+                <tr mat-row *matRowDef="let element; columns: displayedFeedbackColumns;" class="feedback-element-row"
+                    [class.example-expanded-row]="element.expanded" (click)="element.expanded = !element.expanded">
+                </tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="feedback-detail-row"></tr>
+            </table>
+            <mat-paginator appStylePaginatorDirective [showFirstLastButtons]='false' [showTotalPages]="5" [length]="100" [pageSize]="8">
+            </mat-paginator>
+        </div>
+    </mat-grid-list>
+</div>

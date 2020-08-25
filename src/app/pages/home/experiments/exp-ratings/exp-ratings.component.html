@@ -1,44 +1,48 @@
-<mat-grid-list cols="1" class="rating_grid">
-    <div class="rating_head_div">
-        <img src="../../assets/images/beaker_small.svg" />
-        <h1>Virtual Reality's Rating</h1>
-    </div>
-    <div class="rating_table_div">
-        <table mat-table [dataSource]="ratingSource" class="mat-elevation-z8">
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-            <!-- Position Column -->
-            <ng-container matColumnDef="StaffName">
-                <th mat-header-cell *matHeaderCellDef> Staff Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
-            </ng-container>
-            
-            <!-- Name Column -->
-            <ng-container matColumnDef="Payroll">
-                <th mat-header-cell *matHeaderCellDef> Payroll </th>
-                <td mat-cell *matCellDef="let element"> {{element.payroll}} </td>
-            </ng-container>
-
-            <!-- Weight Column -->
-            <ng-container matColumnDef="Rate">
-                <th mat-header-cell *matHeaderCellDef> Rate </th>
-                <td mat-cell *matCellDef="let element" class="rate"> {{element.rate}} </td>
-            </ng-container>
-
-            <!-- <tr mat-header-row *matHeaderRowDef="displayedRatingColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedRatingColumns;"></tr> -->
-            <tr mat-header-row *matHeaderRowDef="displayedRatingColumns"></tr>
-            <tr mat-row *matRowDef="let element; columns: displayedRatingColumns;"class="rating-element-row">
-            </tr>
-        </table>
-    </div>
-    <div class="rating_chart_div">
-        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
-            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend" [colors]="pieChartColors">
-        </canvas>
-        <div class="rate_div">
-            <span class="no_of_rates">Total number of Rates</span>
-            <span class="rate">324</span>
+<div class="content">
+    <mat-grid-list cols="1" class="rating_grid">
+        <div class="rating_head_div">
+            <img src="../../assets/images/beaker_small.svg" />
+            <h1>Virtual Reality's Rating</h1>
         </div>
-    </div>
-</mat-grid-list>
+        <div class="rating_table_div">
+            <table mat-table [dataSource]="ratingSource" class="mat-elevation-z8">
+                <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+                <!-- Position Column -->
+                <ng-container matColumnDef="StaffName">
+                    <th mat-header-cell *matHeaderCellDef> Staff Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
+                </ng-container>
+                
+                <!-- Name Column -->
+                <ng-container matColumnDef="Payroll">
+                    <th mat-header-cell *matHeaderCellDef> Payroll </th>
+                    <td mat-cell *matCellDef="let element"> {{element.payroll}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Rate">
+                    <th mat-header-cell *matHeaderCellDef> Rate </th>
+                    <td mat-cell *matCellDef="let element" class="rate"> {{element.rate}} </td>
+                </ng-container>
+
+                <!-- <tr mat-header-row *matHeaderRowDef="displayedRatingColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedRatingColumns;"></tr> -->
+                <tr mat-header-row *matHeaderRowDef="displayedRatingColumns"></tr>
+                <tr mat-row *matRowDef="let element; columns: displayedRatingColumns;"class="rating-element-row">
+                </tr>
+            </table>
+        </div>
+        <div class="rating_chart_div">
+            <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend" [colors]="pieChartColors">
+            </canvas>
+            <div class="rate_div">
+                <span class="no_of_rates">Total number of Rates</span>
+                <span class="rate">324</span>
+            </div>
+        </div>
+    </mat-grid-list>
+    <mat-paginator class="experiment_rating_mat" appStylePaginatorDirective [showFirstLastButtons]='false' [showTotalPages]="5" [length]="100" [pageSize]="8">
+    </mat-paginator>
+</div>

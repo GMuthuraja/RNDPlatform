@@ -1,5 +1,9 @@
 @import '../../../../../../src/theme/variables.scss';
 
+.content
+{
+  padding:5rem 15rem;
+}
 .titleHolder {
   margin-bottom:20px;
   width: 100%;
@@ -70,6 +74,7 @@ mat-slide-toggle {
   align-items: center;
   padding:0 10px;
 }
+button {cursor: pointer;}
 input[type="file"]{
   -webkit-appearance: none;
   text-align: left;
@@ -105,18 +110,68 @@ input:disabled
   //align-self: flex-end;
   margin:0;
 }
+.btnBrowse
+{
+  background:$fileUpload;
+  margin:0;
+}
 .btnEdit:disabled, input:disabled
 {
   //display: inline-block;
   background:transparent;
 
 }
-.fillHght
+.form50:last-child
 {
   display:flex;
   flex-direction: column;
-  flex-grow: 2;
+  align-items: stretch !important;
 }
+.fillHght
+{
+  //height: calc($fillHeight - 10%);
+  // height:-webkit-fill-available;
+  // height:570px;
+  align-self: stretch !important;
+}
+.fillHght textarea{
+  width: 100%;
+  height:570px; /* Note this is the same height as the placeholders line-height */
+  justify-content: center;
+  background:none;
+  text-align: center;
+  line-height: 570px;
+}
+.fillHght textarea::-ms-value
+{
+  line-height: 16px;
+}
+// .fillHght textarea::placeholder
+// {
+//   line-height: 600px;
+// }
+// .fillHght textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+//   line-height:600px;
+// }
+// .fillHght textarea::-webkit-input-placeholder { /* Webkit */
+//   line-height:600px;
+// }
+// .fillHght textarea:-ms-input-placeholder { /* IE */
+//   line-height:600px;
+// }
+textarea:focus {
+  line-height: auto;
+  justify-content:start;
+  text-align: left;
+  outline: none !important;
+}
+.fillHght textarea:focus {
+  line-height: 16px;
+  justify-content:start;
+  text-align: left;
+  outline: none !important;
+}
+
 /* CSS to change Default/'Accent' color */
 
 ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
@@ -136,4 +191,3 @@ input:disabled
 ::ng-deep .mat-slide-toggle:not(.mat-disabled) .mat-slide-toggle-bar {
   background-color: $slideToggleBase;
 }
-

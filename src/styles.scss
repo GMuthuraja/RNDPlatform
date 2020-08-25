@@ -1,5 +1,4 @@
 @import 'theme/variables.scss';
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -33,6 +32,12 @@ $rndplatform-theme: mat-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($rndplatform-theme);
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -71,6 +76,7 @@ html, body { height: 100%;
   height:100%;
 }
 body { margin: 0; height:100%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 h1
 {
   font-size:36px;
@@ -176,6 +182,7 @@ min-height: 45px;
 border:none !important;
 margin-top:8px;
 border-radius:5px;
+cursor:pointer;
 }
 button:focus
 {
@@ -202,16 +209,17 @@ width:100%;
 {
 width:50%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Styles for the tabs */
+
 .mat-tab-label
 {
   height:100px !important;
   padding-right:30px;
   font-size:14px;
   font-weight:bold;
+  text-align: left;
 }
-/* Styles for the active tab label */
 .mat-tab-label.mat-tab-label-active {
   font-size:18px !important;
 }
@@ -265,39 +273,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height:5px;
   background-color:#1D1860 !important;
 }
-mat-tab-header
-{
+mat-tab-header {
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2) !important;
   height:99px;
-}
-.mat-paginator-page-size {
-  display: none !important;
-}
-
-.mat-paginator-range-label {
-  display: none !important;
-}
-
-.mat-paginator-container {
-  justify-content: center !important;
-}
-
-.mat-paginator-icon {
-  display: none !important;
-  //     content: 'Your text'
-}
-
-.mat-paginator-navigation-next:after {
-  content: 'Next' !important;
-  //display: none !important;
-  // content: 'test'!important;
-}
-
-.mat-paginator-navigation-previous:after {
-  content: 'Pervious' !important;
-}
-.mat-paginator-container {
-  margin-top: 10px !important;
 }
 td
 {
@@ -305,11 +283,10 @@ td
   padding-bottom:10px !important;
 }
 
-
-
-
-
 // Paginator style
+
+
+
 .mat-paginator-page-size {
   display: none !important;
 }
@@ -332,7 +309,7 @@ td
 }
 
 .mat-paginator-navigation-previous:after {
-  content: 'Pervious' !important;
+  content: 'Previous' !important;
 }
 
 .mat-paginator-container {

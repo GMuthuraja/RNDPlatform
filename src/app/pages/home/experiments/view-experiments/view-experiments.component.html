@@ -1,68 +1,76 @@
 <div class="content">
   <div class="formsHolder">
-     <div class="titleHolder">
-    <img src="../assets/images/beaker_small.svg" class="beaker">
-    <h4>Experiments</h4><button type="button" class="btnLavender">Create Experiment</button>
+    <div class="titleHolder">
+      <img src="../assets/images/beaker_small.svg" class="beaker">
+      <h4>Experiments</h4><button type="button" class="btnLavender" (click)="goToNewExperiment()">Create
+        Experiment</button>
+    </div>
+    <table mat-table [dataSource]="dataSource">
+      <!-- Image Column -->
+      <ng-container matColumnDef="clmIcon">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element" class="beakersmall"><img src="../assets/images/beaker_small.svg"></td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Experiment Name </th>
+        <td mat-cell *matCellDef="let element" class="experiments"><a (click)="goToNewExperiment()">{{element.name}}</a>
+        </td>
+      </ng-container>
+
+      <!-- Views Column -->
+      <ng-container matColumnDef="views">
+        <th mat-header-cell *matHeaderCellDef> Views </th>
+        <td mat-cell *matCellDef="let element" class="views"> {{element.views}} </td>
+      </ng-container>
+
+      <!-- Testers Column -->
+      <ng-container matColumnDef="testers">
+        <th mat-header-cell *matHeaderCellDef> Testers </th>
+        <td mat-cell *matCellDef="let element" class="testers"><a (click)="goToTester()">{{element.testers}}</a></td>
+      </ng-container>
+
+      <!-- Rating Column -->
+      <ng-container matColumnDef="rating">
+        <th mat-header-cell *matHeaderCellDef> Rating </th>
+        <td mat-cell *matCellDef="let element" class="rating"><a (click)="goToRatings()"> {{element.rating}} </a></td>
+      </ng-container>
+
+      <!-- Feedback Column -->
+      <ng-container matColumnDef="feedback">
+        <th mat-header-cell *matHeaderCellDef> Feedback </th>
+        <td mat-cell *matCellDef="let element" class="feedback"><a (click)="goToFeedback()"> {{element.feedback}} </a>
+        </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef class="status"> Status </th>
+        <td mat-cell *matCellDef="let element" class="status">
+          <!-- <div *ngIf="element.status" class="published"> <img src="../assets/images/switch_on_light.svg" > <br> <span>Published </span></div>
+        <div *ngIf="!element.status" class="suspended"> <img src="../assets/images/switch_off_light.svg" > <br> <span>Suspended </span></div> -->
+          <div *ngIf="element.status" class="published">
+            <mat-slide-toggle checked></mat-slide-toggle> <br> <span>Published </span>
+          </div>
+          <div *ngIf="!element.status" class="suspended">
+            <mat-slide-toggle></mat-slide-toggle> <br> <span>Suspended </span>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Send Notifications Column -->
+      <ng-container matColumnDef="notification">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button type="button" *ngIf="element.status" class="btnTrans btnCoral" (click)="goToAddNotification()">Send
+            Notifications</button>
+          <button type="button" *ngIf="!element.status" disabled class="btnTrans btnCoral">Send Notifications</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
   </div>
-  <table mat-table [dataSource]="dataSource">
-    <!-- Image Column -->
-    <ng-container matColumnDef="clmIcon">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element" class="beakersmall"><img src="../assets/images/beaker_small.svg" ></td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Experiment Name </th>
-      <td mat-cell *matCellDef="let element" class="experiments"><a href="#">{{element.name}}</a></td>
-    </ng-container>
-
-    <!-- Views Column -->
-    <ng-container matColumnDef="views">
-      <th mat-header-cell *matHeaderCellDef> Views </th>
-      <td mat-cell *matCellDef="let element" class="views"> {{element.views}} </td>
-    </ng-container>
-
-    <!-- Testers Column -->
-    <ng-container matColumnDef="testers">
-      <th mat-header-cell *matHeaderCellDef> Testers </th>
-      <td mat-cell *matCellDef="let element" class="testers"><a href="#">{{element.testers}}</a></td>
-    </ng-container>
-
-    <!-- Rating Column -->
-    <ng-container matColumnDef="rating">
-      <th mat-header-cell *matHeaderCellDef> Rating </th>
-      <td mat-cell *matCellDef="let element" class="rating"><a href="#"> {{element.rating}} </a></td>
-    </ng-container>
-
-    <!-- Feedback Column -->
-    <ng-container matColumnDef="feedback">
-      <th mat-header-cell *matHeaderCellDef> Feedback </th>
-      <td mat-cell *matCellDef="let element" class="feedback"><a href="#"> {{element.feedback}} </a></td>
-    </ng-container>
-
-    <!-- Status Column -->
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef class="status"> Status </th>
-      <td mat-cell *matCellDef="let element" class="status">
-        <div *ngIf="element.status" class="published"> <img src="../assets/images/switch_on_light.svg" > <br> <span>Published </span></div>
-        <div *ngIf="!element.status" class="suspended"> <img src="../assets/images/switch_off_light.svg" > <br> <span>Suspended </span></div>
-      </td>
-    </ng-container>
-
-    <!-- Send Notifications Column -->
-    <ng-container matColumnDef="notification">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <span *ngIf="element.status" class="notify">Send Notifications</span>
-        <span *ngIf="!element.status" class="notifyDull">Send Notifications</span>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>+
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  </div>
-  </div>
-
-
+</div>

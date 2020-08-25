@@ -1,3 +1,8 @@
+@import '../../../../../theme/variables.scss';
+.content
+{
+    padding:5rem;
+}
 .rating_grid {
     // padding: 48px;
     .rating_head_div {
@@ -39,6 +44,14 @@
             td.rate {
                 font-weight: bold;
             }
+
+            .mat-row:nth-child(even) {
+                background-color: #FCFCFC;
+            }
+            
+            .mat-row:nth-child(odd) {
+                background-color: #F0F0F0;
+            }
         }
         p {
             color: #007FFD !important;
@@ -51,6 +64,8 @@
         display: block;
         width: 45%;
         float: left;
+        width: 700px !important;
+        height: 340px !important;
         canvas {
             width: 700px !important;
             height: 340px !important;
@@ -103,3 +118,43 @@
 // tr.rating-element-row:not(.rating-expanded-row):active {
 //    background: #efefef;
 // }
+
+.mat-paginator-page-size {
+    display: none !important;
+}
+
+.mat-paginator-range-label {
+    display: none !important;
+}
+
+.mat-paginator-container {
+    justify-content: center !important;
+}
+
+.mat-paginator-icon {
+    display: none !important;
+    //     content: 'Your text'
+}
+
+.mat-paginator-navigation-next:after {
+    content: 'Next' !important;
+    //display: none !important;
+    // content: 'test'!important;
+}
+
+.mat-paginator-navigation-previous:after {
+    content: 'Pervious' !important;
+}
+
+.mat-paginator-container {
+    margin-top: 10px !important;
+}
+
+.experiment_rating_mat {
+    width: 100%;
+    float: left;
+    margin-top: 25px;
+}
+mat-paginator {
+    margin-top: 10px;
+}

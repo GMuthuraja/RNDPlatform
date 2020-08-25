@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
   animate,
   state,
@@ -6,6 +6,8 @@ import {
   transition,
   trigger
 } from "@angular/animations";
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 export interface FeedbackElement {
@@ -31,15 +33,19 @@ export interface FeedbackElement {
         animate("225ms cubic-bezier(0.4, 0.0, 0.2, 1)")
       )
     ])
-  ]
+  ],
+  encapsulation:ViewEncapsulation.None
 })
 export class FeedbackComponent implements OnInit {
 
   displayedFeedbackColumns: string[] = ['StaffName', 'Payroll', 'Rate', 'Issues', 'Suggestions', 'moreDetail'];
+  @ViewChild (MatPaginator,{static: false}) paginator: MatPaginator;
+  feedbackSource: MatTableDataSource<FeedbackElement>;
+  feedbackData:any = [];
   isAllExpanded:boolean = false;
+
   constructor() { }
 
-  feedbackSource;
   isExpanded: boolean = false;
   ngOnInit(){
     const FEEDBACK_DATA: FeedbackElement[] = [
@@ -114,21 +120,66 @@ export class FeedbackComponent implements OnInit {
           suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
           description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
           expanded: false
+      },
+      {
+          staffName: "Majed Taha Ali",
+          payroll: '11020229',
+          rate: 2,
+          issues: "there is missing label",
+          suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
+          description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+          expanded: false
+      },
+      {
+          staffName: "Majed Taha Ali",
+          payroll: '11020229',
+          rate: 1,
+          issues: "not working at all",
+          suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
+          description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+          expanded: false
+      },
+      {
+          staffName: "Majed Taha Ali",
+          payroll: '11020229',
+          rate: 2,
+          issues: "there is missing label",
+          suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
+          description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+          expanded: false
+      },
+      {
+          staffName: "Majed Taha Ali",
+          payroll: '11020229',
+          rate: 1,
+          issues: "not working at all",
+          suggestions: "My suggestion is to provide a smarter and faster way of showing attendance records by having access to sap services portal......",
+          description: 'The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The idea is provide a smarter and faster way of showing attendance recode by having access to …The',
+          expanded: false
       }
     ];
     
-    this.feedbackSource = FEEDBACK_DATA;
+    this.feedbackData = FEEDBACK_DATA;
+    setTimeout(() => {
+      this.feedbackSource.paginator = this.paginator;
+    }, 1000);
+    // Assign the data to the data source for the table to render
+    this.feedbackSource = new MatTableDataSource(this.feedbackData);
+    console.log(this.feedbackSource);
   }
 
   toggleTableRows() {
     this.isExpanded = !this.isExpanded;
 
-    this.feedbackSource.forEach((row: any) => {
+    // Assign the data to the data source for the table to render
+    this.feedbackData.forEach((row: any) => {
       row.expanded = this.isExpanded;
     })
+    this.feedbackSource = new MatTableDataSource(this.feedbackData);
+    console.log(this.feedbackSource);
 
-    var allExpanded = this.feedbackSource.filter(val=>val.expanded == false);
-    if(allExpanded.length == this.feedbackSource.length) {
+    var allExpanded = this.feedbackData.filter(val=>val.expanded == false);
+    if(allExpanded.length == this.feedbackData.length) {
       this.isAllExpanded = false;
     } else {
       this.isAllExpanded = true;

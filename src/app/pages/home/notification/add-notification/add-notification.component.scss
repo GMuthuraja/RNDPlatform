@@ -1,37 +1,96 @@
 @import '../../../../../theme/variables.scss';
-
-.content
-{
-  display: flex;
-  height:100%;
-  align-items: center;
+.content {
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
+
 .titleHolder {
-  margin-bottom:20px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  img {
-      height:50px;
-      float: left;
-      margin-right:20px
-  }
-  h4 {
-      float: left;
-      color: #707070;
-      font-weight: bold;
-      margin-bottom: 0 !important;
-      background-image:url("/src/assets/images/beaker_small.svg");
-  }
-}
-.formsHolder
-{
-  width:40%;
-  margin-left:auto;
-  margin-right:auto;
-}
-option:first-child
-{
-  color:#707070 !important;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    img {
+        height: 50px;
+        float: left;
+        margin-right: 20px
+    }
+    h4 {
+        float: left;
+        color: #707070;
+        font-weight: bold;
+        margin-bottom: 0 !important;
+        background-image: url("/src/assets/images/beaker_small.svg");
+    }
 }
 
+.formsHolder {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+option:first-child {
+    color: #707070 !important;
+}
+
+.betauser_head_div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // margin-left: 25px;
+    p {
+        padding: 0px 10px 10px !important;
+        width: 100%;
+        border-bottom: solid 1px $cardBorder;
+        img {
+            width: 25px;
+            position: absolute;
+            right: 30px;
+        }
+    }
+}
+
+.pad0 {
+    border: solid 1px #919191;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 0px !important;
+}
+
+.mat-expansion-panel-body {
+    padding: 0px 0px 16px 0px !important;
+}
+
+mat-label {
+    color: $labelblue;
+    padding: 0px 14px !important;
+}
+
+.betauser_tex_div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    input[type="text"] {
+        padding-bottom: 16px;
+        color: black;
+        width: 100%;
+        border-bottom: solid 1px $cardBorder;
+        font-size: 1.4rem !important
+    }
+    button {
+        width: 25px;
+        position: absolute;
+        right: 30px;
+        min-height: 0px !important;
+        color: $labelblue;
+        margin-right: 25px;
+        border: none !important;
+        background: transparent;
+        margin-top: 0px !important;
+        font-size: 1.4rem !important;
+        border-left: solid 1px $cardBorder;
+    }
+}
